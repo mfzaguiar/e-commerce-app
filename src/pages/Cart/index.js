@@ -13,7 +13,7 @@ export default function Cart() {
 }
 
 Cart.navigationOptions = {
-  title: 'Carrinho',
+  tabBarLabel: <Text style={{ fontSize: 11 }}>Carrinho</Text>,
   tabBarIcon: props => <TabIcon name="shopping-cart" {...props} />,
   tabBarBadge: true,
 };

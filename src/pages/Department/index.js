@@ -14,6 +14,6 @@ export default function Department() {
 }
 
 Department.navigationOptions = {
-  title: 'Departamentos',
+  tabBarLabel: <Text style={{ fontSize: 11 }}>Departamentos</Text>,
   tabBarIcon: props => <TabIcon name="list-ul" {...props} />,
 };

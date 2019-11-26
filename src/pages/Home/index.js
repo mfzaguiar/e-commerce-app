@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 import Product from '~/components/Product';
 import api from '~/services/api';
@@ -28,5 +28,6 @@ export default function Home() {
 }
 
 Home.navigationOptions = {
+  tabBarLabel: <Text style={{ fontSize: 11 }}>Home</Text>,
   tabBarIcon: props => <TabIcon name="home" {...props} />,
 };
