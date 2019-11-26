@@ -8,7 +8,7 @@ export default function Rating({ defaultRating = 0, defaultNumRating = 0 }) {
 
   return (
     <Container>
-      <Label>Avaliações ({defaultNumRating})</Label>
+      <Label>avaliações ({defaultNumRating})</Label>
       <StarContainer>
         {arrayStars.map((item, index) => (
           <StarIcon
