@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
   flex: 1;
-  background-color: #4f4f4f;
+  background-color: #fff;
 `;
 
 export const Name = styled.Text`
@@ -48,13 +48,6 @@ export const PriceDiscount = styled.Text`
   color: tomato;
   font-weight: bold;
   letter-spacing: 2;
-`;
-
-export const ProductImage = styled.Image.attrs({
-  resizeMode: 'contain',
-})`
-  min-height: 200px;
-  background: #fff;
 `;
 
 export const ProductInfo = styled.View`

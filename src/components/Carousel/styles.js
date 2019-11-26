@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const ContainerImage = styled.View`
   flex: 1;
-  background: white;
+  background: transparent;
 `;
 
 export const ProductImage = styled.Image.attrs({

@@ -14,7 +14,7 @@ export const Button = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   font-weight: bold;
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 export const Icon = styled(FontAwesome).attrs({

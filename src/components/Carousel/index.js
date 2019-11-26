@@ -4,6 +4,7 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { Dimensions } from 'react-native';
 
 import { Container, ContainerImage, ProductImage } from './styles';
+import { red } from 'ansi-colors';
 
 export default function MyCarousel({ data, dataSize }) {
   const [entries, setEntries] = useState(1);
@@ -38,6 +39,8 @@ export default function MyCarousel({ data, dataSize }) {
         containerStyle={{
           paddingVertical: 0,
           height: 20,
+          alignSelf: 'stretch',
+          backgroundColor: 'rgba(0,0,0,0.6)',
         }}
         dotStyle={{
           width: 10,

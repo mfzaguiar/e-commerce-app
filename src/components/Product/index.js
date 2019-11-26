@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { View } from 'react-native';
 import { formatPrice } from '~/util/format';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import {
   Container,
-  ProductImage,
   ProductInfo,
   ProductHeader,
   Actions,
@@ -24,14 +24,19 @@ import Carousel from '~/components/Carousel';
 export default function Product({ product }) {
   return (
     <Container>
-      <Name>{product.title}</Name>
+      <View style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
+        <Name>{product.title}</Name>
+      </View>
       <Carousel
         data={product.images}
         dataSize={Object.keys({ ...product.images }).length}
       />
       <ProductInfo>
         <ProductHeader>
-          <Rating />
+          <Rating
+            defaultRating={product.rating}
+            defaultNumRating={product.numrating}
+          />
           <Actions>
             <FontAwesome name="heart" size={25} color="#EB5757" />
             <FontAwesome
