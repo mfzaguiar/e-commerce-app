@@ -15,10 +15,10 @@ import {
   PriceDiscount,
   ProductFinish,
   Description,
+  AddButton,
 } from './styles';
 
 import Rating from '~/components/Rating';
-import Button from '~/components/BuyButton';
 import Carousel from '~/components/Carousel';
 
 export default function Product({ product }) {
@@ -61,7 +61,7 @@ export default function Product({ product }) {
             </PriceContainer>
           )}
 
-          <Button>Comprar</Button>
+          <AddButton>Comprar</AddButton>
         </ProductFinish>
         <Description>{product.description}</Description>
       </ProductInfo>

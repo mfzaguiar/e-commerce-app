@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 import TabIcon from '~/components/TabIcon';
+import colors from '~/styles/colors';
 
 export default function Cart() {
   return (
@@ -16,4 +17,5 @@ Cart.navigationOptions = {
   tabBarLabel: <Text style={{ fontSize: 11 }}>Carrinho</Text>,
   tabBarIcon: props => <TabIcon name="shopping-cart" {...props} />,
   tabBarBadge: true,
+  tabBarColor: `${colors.primary}`,
 };

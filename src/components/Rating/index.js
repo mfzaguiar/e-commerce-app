@@ -13,9 +13,9 @@ export default function Rating({ defaultRating = 0, defaultNumRating = 0 }) {
         {arrayStars.map((item, index) => (
           <StarIcon
             key={index}
-            name="star"
+            name={defaultValue <= index ? 'star-o' : 'star'}
             size={20}
-            color={defaultValue <= index ? 'transparent' : '#F2C94C'}
+            color={defaultValue <= index ? 'rgba(0,0,0,.3)' : '#F2C94C'}
           />
         ))}
       </StarContainer>

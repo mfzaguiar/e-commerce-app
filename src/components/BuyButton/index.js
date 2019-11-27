@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Button, ButtonText, Icon } from './styles';
+import { Button, Text, Icon } from './styles';
 
-export default function BuyButton({ children }) {
+export default function BuyButton({ children, ...rest }) {
   return (
-    <Button>
+    <Button {...rest}>
       <Icon name="shopping-cart" />
-      <ButtonText>{children}</ButtonText>
+      <Text>{children}</Text>
     </Button>
   );
 }

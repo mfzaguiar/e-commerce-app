@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import Product from '~/components/Product';
 import api from '~/services/api';
 import TabIcon from '~/components/TabIcon';
+import colors from '~/styles/colors';
 
 // import { Container } from './styles';
 
@@ -28,6 +29,7 @@ export default function Home() {
 }
 
 Home.navigationOptions = {
-  tabBarLabel: <Text style={{ fontSize: 11 }}>Home</Text>,
+  tabBarLabel: <Text style={{ fontSize: 11 }}>Início</Text>,
   tabBarIcon: props => <TabIcon name="home" {...props} />,
+  tabBarColor: `${colors.primary}`,
 };

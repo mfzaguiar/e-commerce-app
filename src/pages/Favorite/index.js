@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 import TabIcon from '~/components/TabIcon';
+import colors from '~/styles/colors';
 
 export default function Favorite() {
   return (
@@ -15,4 +16,5 @@ export default function Favorite() {
 Favorite.navigationOptions = {
   tabBarLabel: <Text style={{ fontSize: 11 }}>Favoritos</Text>,
   tabBarIcon: props => <TabIcon name="heart" {...props} />,
+  tabBarColor: `${colors.primary}`,
 };

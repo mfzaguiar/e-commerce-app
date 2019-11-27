@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
-// import { Container } from './styles';
+import { Container, Title } from './styles';
 
 import TabIcon from '~/components/TabIcon';
+import colors from '~/styles/colors';
 
 export default function Profile() {
   return (
-    <View>
-      <Text>Perfil</Text>
-    </View>
+    <Container>
+      <Title>Perfil</Title>
+    </Container>
   );
 }
 
 Profile.navigationOptions = {
   tabBarLabel: <Text style={{ fontSize: 11 }}>Perfil</Text>,
   tabBarIcon: props => <TabIcon name="user" {...props} />,
+  tabBarColor: `${colors.primary}`,
 };

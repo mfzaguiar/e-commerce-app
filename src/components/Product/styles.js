@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import Button from '~/components/BuyButton';
 import colors from '~/styles/colors';
 
 export const Container = styled.ScrollView`
@@ -46,7 +47,7 @@ export const Price = styled.Text`
 
 export const PriceDiscount = styled.Text`
   font-size: 22px;
-  color: ${colors.tomato};
+  color: ${colors.primary};
   font-weight: bold;
   letter-spacing: 2;
 `;
@@ -78,4 +79,8 @@ export const ProductFinish = styled.View`
 export const Actions = styled.View`
   flex-direction: row;
   margin-right: 10px;
+`;
+
+export const AddButton = styled(Button)`
+  flex: 1;
 `;
