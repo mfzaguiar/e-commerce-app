@@ -14,7 +14,7 @@ export default function Favorite() {
 }
 
 Favorite.navigationOptions = {
-  tabBarLabel: <Text style={{ fontSize: 11 }}>Favoritos</Text>,
+  tabBarLabel: <Text style={{ fontSize: 12 }}>Favoritos</Text>,
   tabBarIcon: props => <TabIcon name="heart" {...props} />,
   tabBarColor: `${colors.primary}`,
 };

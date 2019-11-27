@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     async function loadingData() {
       setLoading(true);
-      const response = await api.get('/products/1');
+      const response = await api.get('/products/3');
       setData(response.data);
       setLoading(false);
     }
@@ -29,7 +29,7 @@ export default function Home() {
 }
 
 Home.navigationOptions = {
-  tabBarLabel: <Text style={{ fontSize: 11 }}>Início</Text>,
+  tabBarLabel: <Text style={{ fontSize: 12 }}>Início</Text>,
   tabBarIcon: props => <TabIcon name="home" {...props} />,
   tabBarColor: `${colors.primary}`,
 };

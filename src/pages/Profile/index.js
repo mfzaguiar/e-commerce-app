@@ -15,7 +15,7 @@ export default function Profile() {
 }
 
 Profile.navigationOptions = {
-  tabBarLabel: <Text style={{ fontSize: 11 }}>Perfil</Text>,
+  tabBarLabel: <Text style={{ fontSize: 12 }}>Perfil</Text>,
   tabBarIcon: props => <TabIcon name="user" {...props} />,
   tabBarColor: `${colors.primary}`,
 };

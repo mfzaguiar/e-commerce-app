@@ -14,7 +14,7 @@ export default function Cart() {
 }
 
 Cart.navigationOptions = {
-  tabBarLabel: <Text style={{ fontSize: 11 }}>Carrinho</Text>,
+  tabBarLabel: <Text style={{ fontSize: 12 }}>Carrinho</Text>,
   tabBarIcon: props => <TabIcon name="shopping-cart" {...props} />,
   tabBarBadge: true,
   tabBarColor: `${colors.primary}`,

@@ -20,7 +20,7 @@ const BottomRoutes = createMaterialBottomTabNavigator(
     activeColor: '#fff',
     inactiveColor: 'rgba(255,255,255,0.5)',
     labeled: true,
-    // barStyle: { backgroundColor: 'black' },
+    // barStyle: { backgroundColor: 'transparent' },
     shifting: true,
   }
 );
