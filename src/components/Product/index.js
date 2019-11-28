@@ -4,6 +4,7 @@ import { formatPrice } from '~/util/format';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import {
+  Header,
   Container,
   ProductInfo,
   ProductHeader,
@@ -20,13 +21,19 @@ import {
 
 import Rating from '~/components/Rating';
 import Carousel from '~/components/Carousel';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Product({ product }) {
+export default function Product({ navigation }) {
+  const product = navigation.getParam('product');
+
   return (
     <Container>
-      <View style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
+      <Header>
+        <TouchableOpacity onPress={() => navigation.navigate('Deals')}>
+          <FontAwesome name="arrow-left" color="#fff" size={18} />
+        </TouchableOpacity>
         <Name>{product.title}</Name>
-      </View>
+      </Header>
       <Carousel
         data={product.images}
         dataSize={Object.keys({ ...product.images }).length}

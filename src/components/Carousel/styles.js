@@ -6,6 +6,7 @@ export const Container = styled.View`
   min-height: 300px;
   align-items: center;
   justify-content: center;
+  background: #fff;
 `;
 
 export const ContainerImage = styled.View`

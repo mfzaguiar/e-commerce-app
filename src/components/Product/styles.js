@@ -4,15 +4,24 @@ import colors from '~/styles/colors';
 
 export const Container = styled.ScrollView`
   flex: 1;
-  background-color: ${colors.white};
+  /* background-color: ${colors.white}; */
+  background-color: #828282;
 `;
 
-export const Name = styled.Text`
-  font-size: 26px;
+export const Header = styled.View`
+  flex-direction: row;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+`;
+
+export const Name = styled.Text.attrs({
+  numberOfLines: 2,
+})`
+  margin: 0 15px;
+  font-size: 20px;
   font-weight: bold;
-  text-align: center;
   color: ${colors.white};
-  margin: 10px 0;
 `;
 
 export const Description = styled.Text`
@@ -53,13 +62,10 @@ export const PriceDiscount = styled.Text`
 `;
 
 export const ProductInfo = styled.View`
-  flex: 1;
-  align-items: center;
-  background: #828282;
+  /* background: red; */
 `;
 
 export const ProductHeader = styled.View`
-  flex: 1;
   flex-direction: row;
   align-self: stretch;
   align-items: center;
