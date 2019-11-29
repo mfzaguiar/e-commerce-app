@@ -17,6 +17,7 @@ import drone from '~/assets/icons/drone.png';
 import tv from '~/assets/icons/tv.png';
 import smartphone from '~/assets/icons/smartphone.png';
 import videogames from '~/assets/icons/videogames.png';
+import StyledText from '~/components/CustomText';
 
 export default function Home() {
   return (
@@ -47,6 +48,8 @@ export default function Home() {
           <DepartmentText>Smarthphone</DepartmentText>
         </DepartmentItem>
       </DepartmentContainer>
+      <StyledText />
+      <Text style={{ fontSize: 30, textAlign: 'center' }}>Hello, world!</Text>
     </Container>
   );
 }

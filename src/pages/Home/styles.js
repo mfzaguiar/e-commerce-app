@@ -11,6 +11,7 @@ export const DepartmentContainer = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
   flex-direction: row;
+  align-self: center;
 `;
 
 export const DepartmentItem = styled.View`
