@@ -18,7 +18,12 @@ import {
 export default function ProdItem({ navigation, item }) {
   return (
     <ProductItem
-      onPress={() => navigation.navigate('Product', { product: item })}
+      onPress={() =>
+        navigation.navigate('Product', {
+          product: item,
+          keyScreen: navigation.state.key,
+        })
+      }
     >
       <ProductContent>
         <LeftContent>

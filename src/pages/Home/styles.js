@@ -1,9 +1,11 @@
 import styled from 'styled-components/native';
+import StyledText from '~/components/CustomText';
 import colors from '~/styles/colors';
+import { ActivityIndicator, Dimensions } from 'react-native';
 
 export const Container = styled.View`
+  flex: 1;
   background: ${colors.background};
-  padding: 10px 0;
 `;
 
 export const DepartmentContainer = styled.ScrollView.attrs({
@@ -12,6 +14,7 @@ export const DepartmentContainer = styled.ScrollView.attrs({
 })`
   flex-direction: row;
   align-self: center;
+  max-height: 100px;
 `;
 
 export const DepartmentItem = styled.View`
@@ -31,13 +34,44 @@ export const DepartmentLogo = styled.TouchableOpacity`
 export const DepartmentImage = styled.Image.attrs({
   resizeMode: 'center',
 })`
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
 `;
 
 export const DepartmentText = styled.Text`
-  font-size: 13px;
+  font-size: 11px;
   font-weight: bold;
-  color: #8d8d8d;
+  color: #737373;
   margin-top: 5px;
+`;
+
+export const SalesContainer = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})`
+  flex: 1;
+  margin: 10px;
+`;
+
+export const SalesHeader = styled.View`
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+`;
+
+export const SalesText = styled(StyledText).attrs({
+  fontFamily: 'roboto-bold',
+  fontSize: 16,
+  color: '#737373',
+})``;
+
+export const SpinnerLoading = styled(ActivityIndicator).attrs({
+  color: 'tomato',
+  alignSelf: 'center',
+  marginTop: 20,
+  size: 'large',
+})``;
+
+export const EmptyImage = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
+  width: ${Dimensions.get('window').width * 1};
 `;

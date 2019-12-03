@@ -12,6 +12,23 @@ import Profile from '~/pages/Profile';
 import Cart from '~/pages/Cart';
 import Product from '~/components/Product';
 
+import colors from '~/styles/colors';
+
+const HomeRoute = createSwitchNavigator(
+  {
+    Home,
+    Product,
+  },
+  {
+    initialRouteName: 'Home',
+    navigationOptions: {
+      tabBarColor: colors.primary,
+      tabBarLabel: <Text style={{ fontSize: 12 }}>Início</Text>,
+      tabBarIcon: props => <TabIcon name="home" {...props} />,
+    },
+  }
+);
+
 const DealsRoute = createSwitchNavigator(
   {
     Deals,
@@ -29,14 +46,14 @@ const DealsRoute = createSwitchNavigator(
 
 const BottomRoutes = createMaterialBottomTabNavigator(
   {
-    Home,
+    HomeRoute,
     DealsRoute,
     Favorite,
     Cart,
     Profile,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'HomeRoute',
     activeColor: '#fff',
     inactiveColor: 'rgba(255,255,255,0.5)',
     labeled: true,

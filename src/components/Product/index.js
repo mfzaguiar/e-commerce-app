@@ -25,11 +25,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Product({ navigation }) {
   const product = navigation.getParam('product');
+  const { params } = navigation.state;
 
   return (
     <Container>
       <Header>
-        <TouchableOpacity onPress={() => navigation.navigate('Deals')}>
+        <TouchableOpacity onPress={() => navigation.navigate(params.keyScreen)}>
           <FontAwesome name="arrow-left" color="#fff" size={18} />
         </TouchableOpacity>
         <Name>{product.title}</Name>

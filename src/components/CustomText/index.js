@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 import * as Font from 'expo-font';
 
-export default function CustomText() {
+export default function CustomText({
+  children,
+  fontFamily = 'roboto-regular',
+  fontSize = 20,
+  color = '#fff',
+}) {
   const [fontLoad, setFontLoad] = useState(false);
 
   useEffect(() => {
@@ -20,12 +25,12 @@ export default function CustomText() {
     fontLoad && (
       <Text
         style={{
-          fontFamily: 'roboto-regular',
-          textAlign: 'center',
-          fontSize: 30,
+          fontFamily,
+          fontSize,
+          color,
         }}
       >
-        Hello, world!
+        {children}
       </Text>
     )
   );
