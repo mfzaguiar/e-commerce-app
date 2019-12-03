@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, FlatList } from 'react-native';
-
-import TabIcon from '~/components/TabIcon';
-import colors from '~/styles/colors';
+import { FlatList } from 'react-native';
 
 import {
   Container,
@@ -18,6 +15,7 @@ import {
   EmptyImage,
 } from './styles';
 
+import Header from '~/components/Header';
 import ProductItem from '~/components/ProductItem';
 import api from '~/services/api';
 import all from '~/assets/icons/online-store.png';
@@ -58,12 +56,23 @@ export default function Home({ navigation }) {
       response = await api.get('products');
       setProduts(response.data);
     }
+    setLoading(false);
+  }
 
+  async function handleSearchSubmit(search) {
+    setLoading(true);
+    const response = await api.get('products', {
+      params: {
+        q: search,
+      },
+    });
+    setProduts(response.data);
     setLoading(false);
   }
 
   return (
     <Container>
+      <Header handleSearchSubmit={handleSearchSubmit} />
       <DepartmentContainer>
         <DepartmentItem>
           <DepartmentLogo

@@ -16,6 +16,5 @@ export const ContainerImage = styled.View`
 
 export const ProductImage = styled.Image.attrs({
   resizeMode: 'contain',
-})`
-  flex: 1;
-`;
+  aspectRatio: 1,
+})``;

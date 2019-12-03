@@ -5,7 +5,7 @@ import colors from '~/styles/colors';
 export const ProductItem = styled.TouchableOpacity`
   height: 150px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   margin-top: 5px;
 `;
 
@@ -20,11 +20,9 @@ export const LeftContent = styled.View`
 `;
 
 export const ProductImage = styled.Image.attrs({
-  resizeMode: 'stretch',
-})`
-  height: 100%;
-  width: 100%;
-`;
+  resizeMode: 'contain',
+  aspectRatio: 1,
+})``;
 
 export const RightContent = styled.View`
   flex: 2;

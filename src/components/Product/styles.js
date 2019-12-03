@@ -4,7 +4,6 @@ import colors from '~/styles/colors';
 
 export const Container = styled.ScrollView`
   flex: 1;
-  /* background-color: ${colors.white}; */
   background-color: #828282;
 `;
 
