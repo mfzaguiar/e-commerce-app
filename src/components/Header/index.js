@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Container, Logo } from './styles';
-import Input from '~/components/Input';
+import InputSearch from '~/components/InputSearch';
 import logo from '~/assets/icons/logo.png';
 
 export default function Header({ handleSearchSubmit }) {
@@ -10,15 +10,15 @@ export default function Header({ handleSearchSubmit }) {
   return (
     <Container>
       <Logo source={logo} />
-      <Input
+      <InputSearch
         placeholder="Nome do produto"
         icon="search"
         autoCorrect={false}
         autoCapitalize="none"
         returnKeyType="send"
         onSubmitEditing={() => handleSearchSubmit(search)}
-        value={search}
-        onChangeText={setSearch}
+        search={search}
+        setSearch={setSearch}
       />
     </Container>
   );
