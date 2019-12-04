@@ -27,8 +27,8 @@ export default function Profile() {
           }}
         />
         <ProfileInfo>
-          <Name>Matheus Felipe Zacarias Aguiar</Name>
-          <Email>first_mf@hotmail.com</Email>
+          <Name>Steven T. Calle</Name>
+          <Email>StevenTCalle@armyspy.com</Email>
         </ProfileInfo>
       </HeaderProfile>
       <ProfileButton name="envelope-o" margin={10}>
@@ -46,7 +46,7 @@ export default function Profile() {
         <FontAwesome
           style={{ marginLeft: 20 }}
           name="sign-out"
-          color="red"
+          color="tomato"
           size={20}
         />
       </SingOutButton>

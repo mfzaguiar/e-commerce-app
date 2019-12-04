@@ -3,7 +3,8 @@
     { "id": 1, "title": "drone" },
     { "id": 2, "title": "smartphone" },
     { "id": 3, "title": "tv" },
-    { "id": 4, "title": "videogames" }
+    { "id": 4, "title": "videogames" },
+    { "id": 5, "title": "laptop" }
   ],
   "products": [
     {
@@ -73,6 +74,32 @@
         "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSfg2NwaEX2LGG-X0hPXHc9hE3C9Tj6GjqMjVKYjgDtFJ1hSjCDys34PwB9STE5-cp4PEC76cyzh8q9_8MJPSLhZKpf7f8L&usqp=CAE"
       ],
       "price": 2350,
+      "discount": 0.9
+    },
+    {
+      "id": 6,
+      "departmentId": 5,
+      "title": "MacBook Air MQD32BZ/A com Intel Core i5 Dual Core 8GB 128GB SSD 13'' Prata - Apple",
+      "description": "Apple · MacBook Family · MacBook Air · Mac OS · 13 polegadas · HD de 128 GB · SSD · Disco rígido · 8 GB de RAM · Processador de 1,8 GHz      A bateria do MacBook Air dura muitas horas entre uma carga e outra. Do café da manhã até a volta para casa, você trabalha sem precisar de uma tomada.",
+      "rating": 5,
+      "numrating": 2,
+      "images": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT8894q0YL8SjDVikAj0fktF_JxQJ_83Rkw7edRL4YYCCeHZzKjAPxssaqCrrwTi_6pVjMyP2XApi9DSGcaE9SUBvE2XBx7S7gJ9YypKPZJHp_mHXCGUAcWJg&usqp=CAE"
+      ],
+      "price": 4050.55,
+      "discount": 0
+    },
+    {
+      "id": 7,
+      "departmentId": 5,
+      "title": "Macbook Apple Pro Retina, Intel Core i5, 8GB, SSD 256GB, macOS, 13.3´, Cinza Espacial - MUHP2BZ/A",
+      "description": "Apple · MacBook Family · MacBook Pro · Mac OS · 13,3 polegadas · HD de 256 GB · SSD · 8 GB de RAM · Touchscreen · Processador de 1,4 GHz. O MacBook Pro leva o notebook para outro patamar de eficiência e mobilidade. Com recursos como processadores e memória de alto desempenho, chips gráficos avançados e armazenamento ultrarrápido, todas as suas ideias ganham fôlego para ir muito mais longe.",
+      "rating": 5,
+      "numrating": 2,
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTR6GZNWhgruoIf3QDbimWH9DAdM0-PesKFH1jWbHz22fn0QUFhI2Y6RJB1O1snZ2cV8J6_3T9pg-RRmxtTd5bOKigB-ayymOK4EMs-RSoTPkRone3vt8vd&usqp=CAE"
+      ],
+      "price": 9050.55,
       "discount": 0.9
     }
   ],

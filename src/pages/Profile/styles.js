@@ -48,6 +48,6 @@ export const SingOutButton = styled.TouchableOpacity`
 
 export const SignOutText = styled(CustomText).attrs({
   fontFamily: 'roboto-regular',
-  color: `red`,
+  color: `tomato`,
   fontSize: 20,
 })``;

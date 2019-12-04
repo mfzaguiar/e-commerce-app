@@ -23,6 +23,7 @@ import drone from '~/assets/icons/drone.png';
 import tv from '~/assets/icons/tv.png';
 import smartphone from '~/assets/icons/smartphone.png';
 import videogames from '~/assets/icons/videogames.png';
+import laptop from '~/assets/icons/laptop.png';
 import notfound from '~/assets/items-not-found.png';
 
 export default function Home({ navigation }) {
@@ -110,6 +111,17 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
+              handleLoadDepartment('laptop');
+              setTitle('Notebook');
+            }}
+          >
+            <DepartmentImage source={laptop} />
+          </DepartmentLogo>
+          <DepartmentText>Notebook</DepartmentText>
+        </DepartmentItem>
+        <DepartmentItem>
+          <DepartmentLogo
+            onPress={() => {
               handleLoadDepartment('videogames');
               setTitle('Video Games');
             }}
@@ -141,6 +153,7 @@ export default function Home({ navigation }) {
           <>
             {products.length > 0 ? (
               <FlatList
+                showsVerticalScrollIndicator={false}
                 numColumns={1}
                 data={products}
                 keyExtractor={item => String(item.id)}

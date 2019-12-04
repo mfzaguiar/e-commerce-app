@@ -15,6 +15,7 @@ export const DepartmentContainer = styled.ScrollView.attrs({
   flex-direction: row;
   align-self: center;
   max-height: 100px;
+  margin: 0 5px;
 `;
 
 export const DepartmentItem = styled.View`
