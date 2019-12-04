@@ -45,9 +45,7 @@ export const DepartmentText = styled.Text`
   margin-top: 5px;
 `;
 
-export const SalesContainer = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-})`
+export const SalesContainer = styled.View`
   flex: 1;
   margin: 10px;
 `;
