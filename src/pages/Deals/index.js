@@ -8,6 +8,7 @@ import {
   WrapperCount,
   HeaderImage,
   Title,
+  SpinnerLoading,
 } from './styles';
 
 import ProductItem from '~/components/ProductItem';
@@ -15,6 +16,7 @@ import bfImage from '~/assets/images/black-friday.png';
 import api from '~/services/api';
 
 export default function Deals({ navigation }) {
+  const [loading, setLoading] = useState(true);
   const [products, setProduts] = useState([]);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function Deals({ navigation }) {
       const discountProducts = response.data.filter(p => p.discount > 0);
 
       setProduts(discountProducts);
+      setLoading(false);
     }
     loadProducts();
   }, []);
@@ -49,15 +52,20 @@ export default function Deals({ navigation }) {
             size={26}
           />
         </WrapperCount>
-        <FlatList
-          contentContainerStyle={{ paddingBottom: 10 }}
-          numColumns={1}
-          data={products}
-          keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => (
-            <ProductItem item={item} navigation={navigation} />
-          )}
-        />
+
+        {loading ? (
+          <SpinnerLoading />
+        ) : (
+          <FlatList
+            contentContainerStyle={{ paddingBottom: 10 }}
+            numColumns={1}
+            data={products}
+            keyExtractor={item => String(item.id)}
+            renderItem={({ item }) => (
+              <ProductItem item={item} navigation={navigation} />
+            )}
+          />
+        )}
       </Container>
     </ContainerGradient>
   );

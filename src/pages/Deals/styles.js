@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Dimensions } from 'react-native';
+import { ActivityIndicator, Dimensions } from 'react-native';
 
 export const Container = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
@@ -33,3 +33,10 @@ export const Title = styled.Text`
   color: #fff;
   margin-bottom: 5px;
 `;
+
+export const SpinnerLoading = styled(ActivityIndicator).attrs({
+  color: 'tomato',
+  alignSelf: 'center',
+  marginTop: 30,
+  size: 'large',
+})``;
