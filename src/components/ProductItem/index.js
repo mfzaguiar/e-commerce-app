@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import { formatPrice } from '~/util/format';
+import Discount from '~/components/Discount';
+
 import {
   ProductItem,
   ProductContent,
@@ -32,6 +34,7 @@ export default function ProdItem({ navigation, item }) {
               uri: `${item.images[0]}`,
             }}
           />
+          {item.discount > 0 && <Discount>{item.discount}</Discount>}
         </LeftContent>
         <RightContent>
           <Description>{item.title}</Description>
