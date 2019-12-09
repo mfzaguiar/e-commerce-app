@@ -24,7 +24,7 @@ import tv from '~/assets/icons/tv.png';
 import smartphone from '~/assets/icons/smartphone.png';
 import videogames from '~/assets/icons/videogames.png';
 import laptop from '~/assets/icons/laptop.png';
-import notfound from '~/assets/items-not-found.png';
+import notfound from '~/assets/images/items-not-found.png';
 
 export default function Home({ navigation }) {
   const [loading, setLoading] = useState(false);

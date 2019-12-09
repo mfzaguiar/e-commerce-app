@@ -7,7 +7,7 @@ export const Container = styled.View`
   flex: 1;
   padding: 20px;
   background: ${colors.white};
-  margin: ${props => (props.margin !== 0 ? `${props.margin}px 0` : `0px`)};
+  margin: ${props => (props.margin !== 0 ? `${props.margin}px 0` : `1px`)};
 `;
 
 export const Button = styled.TouchableOpacity`

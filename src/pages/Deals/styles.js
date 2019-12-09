@@ -1,11 +1,10 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ActivityIndicator, Dimensions } from 'react-native';
+import { Animated } from 'react-native';
 
-export const Container = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-})`
-  padding: 5px;
+export const Container = styled.View`
+  padding: 0 5px;
 `;
 
 export const ContainerGradient = styled(LinearGradient).attrs({
@@ -15,19 +14,22 @@ export const ContainerGradient = styled(LinearGradient).attrs({
 `;
 
 export const WrapperCount = styled.View`
-  background: rgba(0, 0, 0, 0.1);
-  padding: 5px 0;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.2);
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 50px 0;
 `;
 
 export const HeaderImage = styled.Image.attrs({
-  alignSelf: 'center',
+  resizeMode: 'contain',
 })`
-  height: ${Dimensions.get('window').width * 0.5};
-  width: ${Dimensions.get('window').width * 0.5};
+  height: ${Dimensions.get('window').width * 0.25};
+  width: ${Dimensions.get('window').width * 0.25};
 `;
 
-export const Title = styled.Text`
-  font-size: 18px;
+export const Title = styled(Animated.Text).attrs({})`
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
   color: #fff;
@@ -40,3 +42,9 @@ export const SpinnerLoading = styled(ActivityIndicator).attrs({
   marginTop: 30,
   size: 'large',
 })``;
+
+export const HeaderCountDown = styled.View`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;

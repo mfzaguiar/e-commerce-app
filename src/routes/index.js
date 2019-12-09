@@ -53,7 +53,7 @@ const BottomRoutes = createMaterialBottomTabNavigator(
     Profile,
   },
   {
-    initialRouteName: 'DealsRoute',
+    initialRouteName: 'Cart',
     activeColor: '#fff',
     inactiveColor: 'rgba(255,255,255,0.5)',
     labeled: true,

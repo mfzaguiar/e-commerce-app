@@ -1,9 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { Provider } from 'react-redux';
 import { registerRootComponent } from 'expo';
 import Constants from 'expo-constants';
+
 import './config/ReactotronConfig';
 import Routes from '~/routes';
+import store from '~/store';
 
 const styles = StyleSheet.create({
   statusBar: {
@@ -14,8 +17,10 @@ const styles = StyleSheet.create({
 function App() {
   return (
     <>
-      <View style={styles.statusBar} />
-      <Routes />
+      <Provider store={store}>
+        <View style={styles.statusBar} />
+        <Routes />
+      </Provider>
     </>
   );
 }

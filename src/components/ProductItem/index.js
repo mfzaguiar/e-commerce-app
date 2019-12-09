@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import { formatPrice } from '~/util/format';
@@ -17,7 +18,14 @@ import {
   AddButton,
 } from './styles';
 
-export default function ProdItem({ navigation, item }) {
+function ProdItem({ navigation, item, dispatch }) {
+  function handleAddProduct(product) {
+    dispatch({
+      type: 'ADD_TO_CART',
+      product,
+    });
+  }
+
   return (
     <ProductItem
       onPress={() =>
@@ -47,9 +55,13 @@ export default function ProdItem({ navigation, item }) {
             </Price>
             <FontAwesome name="heart" color="#737373" size={20} />
           </PriceContainer>
-          <AddButton>Adicionar</AddButton>
+          <AddButton onPress={() => handleAddProduct(item)}>
+            Adicionar
+          </AddButton>
         </RightContent>
       </ProductContent>
     </ProductItem>
   );
 }
+
+export default connect()(ProdItem);
