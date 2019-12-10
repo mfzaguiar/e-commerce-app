@@ -70,7 +70,10 @@ Cart.navigationOptions = ({ navigation }) => {
 };
 
 const mapStateToProps = state => ({
-  cart: state.cart || [],
+  cart: state.cart.map(product => ({
+    ...product,
+    subtotal: formatPrice(product.finalPrice * product.amount),
+  })),
   total: formatPrice(
     state.cart.reduce((totalSum, product) => {
       return totalSum + product.finalPrice * product.amount;

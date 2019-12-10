@@ -69,11 +69,7 @@ function ProductCart({ item, removeFromCart, updateAmount }) {
           </Wrapper>
           <Wrapper>
             <Title>Subtotal</Title>
-            <Price>
-              {formatPrice(
-                item.price * (item.discount > 0 ? item.discount : 1)
-              )}
-            </Price>
+            <Price>{item.subtotal}</Price>
           </Wrapper>
         </RightContent>
       </ProductContent>
