@@ -7,7 +7,6 @@ export default function CustomText({
   fontFamily = 'roboto-regular',
   fontSize = 20,
   color = '#fff',
-  marginRight = 0,
 }) {
   const [fontLoad, setFontLoad] = useState(false);
 
@@ -29,7 +28,6 @@ export default function CustomText({
           fontFamily,
           fontSize,
           color,
-          marginRight,
         }}
       >
         {children}

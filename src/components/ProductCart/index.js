@@ -1,7 +1,10 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { RectButton } from 'react-native-gesture-handler';
 import { FontAwesome } from '@expo/vector-icons/';
 
+import * as CartActions from '~/store/modules/cart/actions';
 import { formatPrice } from '~/util/format';
 
 import {
@@ -19,8 +22,12 @@ import {
   IconButton,
 } from './styles';
 
-function ProductCart({ item }) {
+function ProductCart({ item, removeFromCart }) {
   const productImage = { ...item.images };
+
+  function handleDeleteProduct(id) {
+    removeFromCart(id);
+  }
 
   return (
     <ProductItem>
@@ -33,7 +40,9 @@ function ProductCart({ item }) {
           />
           <WrapperActions>
             <FontAwesome name="heart" color="#737373" size={20} />
-            <FontAwesome name="trash" color="#737373" size={20} />
+            <RectButton onPress={() => handleDeleteProduct(item.id)}>
+              <FontAwesome name="trash" color="#737373" size={20} />
+            </RectButton>
           </WrapperActions>
         </LeftContent>
         <RightContent>
@@ -64,4 +73,7 @@ function ProductCart({ item }) {
   );
 }
 
-export default connect()(ProductCart);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(ProductCart);

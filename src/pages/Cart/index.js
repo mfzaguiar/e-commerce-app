@@ -35,8 +35,10 @@ function Cart({ cart, total, navigation }) {
             renderItem={({ item }) => <ProductCart item={item} />}
           />
           <TotalWrapper>
-            <TotalText>TOTAL</TotalText>
-            <TotalPrice>{total}</TotalPrice>
+            <TotalText>
+              TOTAL
+              <TotalPrice> {total}</TotalPrice>
+            </TotalText>
           </TotalWrapper>
           <FinishButton>
             <ButtonText>Finalizar pedido</ButtonText>

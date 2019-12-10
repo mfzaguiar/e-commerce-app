@@ -22,7 +22,6 @@ export const TotalText = styled(CustomText).attrs({
   fontFamily: 'roboto-bold',
   fontSize: 16,
   color: `${colors.grey}`,
-  marginRight: 10,
 })``;
 
 export const TotalPrice = styled(CustomText).attrs({

@@ -13,6 +13,7 @@
     "expo": "^35.0.0",
     "expo-font": "~7.0.0",
     "expo-linear-gradient": "~7.0.0",
+    "immer": "^5.0.1",
     "intl": "^1.2.5",
     "json-server-relationship": "^0.14.5",
     "react": "16.8.3",
