@@ -22,11 +22,19 @@ import {
   IconButton,
 } from './styles';
 
-function ProductCart({ item, removeFromCart }) {
+function ProductCart({ item, removeFromCart, updateAmount }) {
   const productImage = { ...item.images };
 
   function handleDeleteProduct(id) {
     removeFromCart(id);
+  }
+
+  function increment(product) {
+    updateAmount(product.id, product.amount + 1);
+  }
+
+  function decrement(product) {
+    updateAmount(product.id, product.amount - 1);
   }
 
   return (
@@ -50,11 +58,11 @@ function ProductCart({ item, removeFromCart }) {
           <Wrapper>
             <Title>Quantidade</Title>
             <WrapperActions>
-              <IconButton>
+              <IconButton onPress={() => decrement(item)}>
                 <FontAwesome name="minus" color="#fff" size={15} />
               </IconButton>
               <AmountText>{item.amount}</AmountText>
-              <IconButton>
+              <IconButton onPress={() => increment(item)}>
                 <FontAwesome name="plus" color="#fff" size={15} />
               </IconButton>
             </WrapperActions>
