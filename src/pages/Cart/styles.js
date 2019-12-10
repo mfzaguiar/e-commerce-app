@@ -39,6 +39,16 @@ export const FinishButton = styled(RectButton)`
   justify-content: center;
 `;
 
+export const BuyButton = styled(RectButton)`
+  background: ${colors.primary};
+  border-radius: 4px;
+  padding: 12px 20px;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+`;
+
 export const ButtonText = styled(CustomText).attrs({
   fontFamily: 'roboto-bold',
   fontSize: 18,
