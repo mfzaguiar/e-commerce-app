@@ -6,6 +6,10 @@ export default function cart(state = [], action) {
         {
           ...action.product,
           amount: 1,
+          finalPrice: Number(
+            action.product.price *
+              Number(action.product.discount > 0 ? action.product.discount : 1)
+          ),
         },
       ];
     default:

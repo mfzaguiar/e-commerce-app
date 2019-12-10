@@ -19,7 +19,7 @@ import TabIcon from '~/components/TabIcon';
 import colors from '~/styles/colors';
 import emptyCart from '~/assets/images/empty-bag.png';
 
-function Cart({ cart, navigation }) {
+function Cart({ cart, total, navigation }) {
   useEffect(() => {
     navigation.setParams({ cart: Number(cart.length || 0) });
   }, [cart]);
@@ -36,7 +36,7 @@ function Cart({ cart, navigation }) {
           />
           <TotalWrapper>
             <TotalText>TOTAL</TotalText>
-            <TotalPrice>{formatPrice(2500)}</TotalPrice>
+            <TotalPrice>{total}</TotalPrice>
           </TotalWrapper>
           <FinishButton>
             <ButtonText>Finalizar pedido</ButtonText>
@@ -69,6 +69,11 @@ Cart.navigationOptions = ({ navigation }) => {
 
 const mapStateToProps = state => ({
   cart: state.cart || [],
+  total: formatPrice(
+    state.cart.reduce((totalSum, product) => {
+      return totalSum + product.finalPrice * product.amount;
+    }, 0)
+  ),
 });
 
 export default connect(mapStateToProps)(Cart);
