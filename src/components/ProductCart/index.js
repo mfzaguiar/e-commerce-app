@@ -22,7 +22,7 @@ import {
   IconButton,
 } from './styles';
 
-function ProductCart({ item, removeFromCart, updateAmount }) {
+function ProductCart({ item, removeFromCart, updateAmountRequest }) {
   const productImage = { ...item.images };
 
   function handleDeleteProduct(id) {
@@ -30,11 +30,11 @@ function ProductCart({ item, removeFromCart, updateAmount }) {
   }
 
   function increment(product) {
-    updateAmount(product.id, product.amount + 1);
+    updateAmountRequest(product.id, product.amount + 1);
   }
 
   function decrement(product) {
-    updateAmount(product.id, product.amount - 1);
+    updateAmountRequest(product.id, product.amount - 1);
   }
 
   return (

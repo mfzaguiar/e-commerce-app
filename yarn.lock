@@ -5846,6 +5846,21 @@ react-native-paper@^3.2.1:
     color "^3.1.2"
     react-native-safe-area-view "^0.12.0"
 
+react-native-root-siblings@^4.0.0:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-root-siblings/-/react-native-root-siblings-4.0.5.tgz#4ca1bfbb48788a885fb8385f8d574a383b52b248"
+  integrity sha512-DTmAfedQjt47BBKo2h1RuXBZtMoQLnZGYjlJ6Zx4/3SE3e8fShujoyovv0shp/lDs2Bqe8vq6feg9+zGqxB6gQ==
+  dependencies:
+    static-container "^1.5.1"
+
+react-native-root-toast@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-root-toast/-/react-native-root-toast-3.2.0.tgz#eecd50bb914ad74152c0049d77f8e7c9842e03fa"
+  integrity sha512-Y8udA38bGvqdFRp9JiIAAxCaTc1TnjVWjG15UWzOzTKU4+kVuuCCuSGS1PZswhj+eA0ZuB2y2UbZ/ylxOknJ+Q==
+  dependencies:
+    prop-types "^15.5.10"
+    react-native-root-siblings "^4.0.0"
+
 react-native-safe-area-view@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.12.0.tgz#5c312f087300ecf82e8541c3eac25d560e147f22"
@@ -6722,6 +6737,11 @@ stacktrace-parser@0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/stacktrace-parser/-/stacktrace-parser-0.1.4.tgz#01397922e5f62ecf30845522c95c4fe1d25e7d4e"
   integrity sha1-ATl5IuX2Ls8whFUiyVxP4dJefU4=
+
+static-container@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/static-container/-/static-container-1.5.1.tgz#9d7a94e04dea864539a7b6a1304843ada740dc19"
+  integrity sha512-OFChfLKIvSzaMA3otS5CEabJTIzHFPhMxogIT+io4F207PXTvS6woFyjXIyXyqMIYAhryePGeFZYC6uLcG1lpA==
 
 static-extend@^0.1.1:
   version "0.1.2"
