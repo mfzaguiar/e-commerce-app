@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Text } from 'react-native';
 import { formatPrice } from '~/util/format';
 
@@ -19,10 +19,27 @@ import TabIcon from '~/components/TabIcon';
 import colors from '~/styles/colors';
 import emptyCart from '~/assets/images/empty-bag.png';
 
-function Cart({ cart, total, navigation }) {
+export default function Cart({ navigation }) {
+  const cart = useSelector(state =>
+    state.cart.map(product => ({
+      ...product,
+      subtotal: formatPrice(product.finalPrice * product.amount),
+    }))
+  );
+
+  const total = useSelector(state =>
+    formatPrice(
+      state.cart.reduce((totalSum, product) => {
+        return totalSum + product.finalPrice * product.amount;
+      }, 0)
+    )
+  );
+
+  const cartSize = useSelector(state => state.cart.length);
+
   useEffect(() => {
-    navigation.setParams({ cart: Number(cart.length || 0) });
-  }, [cart]);
+    navigation.setParams({ cart: Number(cartSize || 0) });
+  }, [cartSize]);
 
   return (
     <Container>
@@ -68,17 +85,3 @@ Cart.navigationOptions = ({ navigation }) => {
     tabBarColor: `${colors.primary}`,
   };
 };
-
-const mapStateToProps = state => ({
-  cart: state.cart.map(product => ({
-    ...product,
-    subtotal: formatPrice(product.finalPrice * product.amount),
-  })),
-  total: formatPrice(
-    state.cart.reduce((totalSum, product) => {
-      return totalSum + product.finalPrice * product.amount;
-    }, 0)
-  ),
-});
-
-export default connect(mapStateToProps)(Cart);

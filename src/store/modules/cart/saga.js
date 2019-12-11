@@ -51,7 +51,7 @@ function* updateAmount({ id, amount }) {
   const stockAmount = stock.data.amount;
 
   if (amount > stockAmount) {
-    Toast.show('Produto indisponível no estoque', {
+    Toast.show('Quantidade indisponível no estoque', {
       duration: Toast.durations.SHORT,
       position: Toast.positions.BOTTOM,
       backgroundColor: 'red',

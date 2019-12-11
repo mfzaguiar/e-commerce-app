@@ -1,11 +1,9 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import * as CartActions from '~/store/modules/cart/actions';
-import { formatPrice } from '~/util/format';
 
 import {
   ProductItem,
@@ -22,19 +20,20 @@ import {
   IconButton,
 } from './styles';
 
-function ProductCart({ item, removeFromCart, updateAmountRequest }) {
+export default function ProductCart({ item }) {
+  const dispatch = useDispatch();
   const productImage = { ...item.images };
 
   function handleDeleteProduct(id) {
-    removeFromCart(id);
+    dispatch(CartActions.removeFromCart(id));
   }
 
   function increment(product) {
-    updateAmountRequest(product.id, product.amount + 1);
+    dispatch(CartActions.updateAmountRequest(product.id, product.amount + 1));
   }
 
   function decrement(product) {
-    updateAmountRequest(product.id, product.amount - 1);
+    dispatch(CartActions.updateAmountRequest(product.id, product.amount - 1));
   }
 
   return (
@@ -76,8 +75,3 @@ function ProductCart({ item, removeFromCart, updateAmountRequest }) {
     </ProductItem>
   );
 }
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(CartActions, dispatch);
-
-export default connect(null, mapDispatchToProps)(ProductCart);

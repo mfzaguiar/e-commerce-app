@@ -1,6 +1,5 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import * as CartActions from '~/store/modules/cart/actions';
@@ -20,9 +19,11 @@ import {
   AddButton,
 } from './styles';
 
-function ProdItem({ navigation, item, addToCartRequest }) {
+export default function ProdItem({ navigation, item }) {
+  const dispatch = useDispatch();
+
   function handleAddProduct(id) {
-    addToCartRequest(id);
+    dispatch(CartActions.addToCartRequest(id));
   }
 
   return (
@@ -62,8 +63,3 @@ function ProdItem({ navigation, item, addToCartRequest }) {
     </ProductItem>
   );
 }
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(CartActions, dispatch);
-
-export default connect(null, mapDispatchToProps)(ProdItem);
