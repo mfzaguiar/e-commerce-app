@@ -15,7 +15,6 @@ export const ContainerGradient = styled(LinearGradient).attrs({
 
 export const WrapperCount = styled.View`
   flex-direction: row;
-  background: rgba(255, 255, 255, 0.2);
   align-items: center;
   justify-content: space-evenly;
   padding: 50px 0;

@@ -1,4 +1,34 @@
 {
+  "stock": [
+    {
+      "id": 1,
+      "amount": 1
+    },
+    {
+      "id": 2,
+      "amount": 2
+    },
+    {
+      "id": 3,
+      "amount": 4
+    },
+    {
+      "id": 4,
+      "amount": 2
+    },
+    {
+      "id": 5,
+      "amount": 3
+    },
+    {
+      "id": 6,
+      "amount": 2
+    },
+    {
+      "id": 7,
+      "amount": 1
+    }
+  ],
   "department": [
     { "id": 1, "title": "drone" },
     { "id": 2, "title": "smartphone" },

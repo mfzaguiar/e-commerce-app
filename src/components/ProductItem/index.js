@@ -20,9 +20,9 @@ import {
   AddButton,
 } from './styles';
 
-function ProdItem({ navigation, item, addToCart }) {
-  function handleAddProduct(product) {
-    addToCart(product);
+function ProdItem({ navigation, item, addToCartRequest }) {
+  function handleAddProduct(id) {
+    addToCartRequest(id);
   }
 
   return (
@@ -54,7 +54,7 @@ function ProdItem({ navigation, item, addToCart }) {
             </Price>
             <FontAwesome name="heart" color="#737373" size={20} />
           </PriceContainer>
-          <AddButton onPress={() => handleAddProduct(item)}>
+          <AddButton onPress={() => handleAddProduct(item.id)}>
             Adicionar
           </AddButton>
         </RightContent>
