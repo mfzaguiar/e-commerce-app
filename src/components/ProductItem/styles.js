@@ -8,10 +8,6 @@ export const ProductItem = styled.TouchableOpacity`
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
   margin-top: 5px;
-`;
-
-export const ProductContent = styled.View`
-  flex: 1;
   flex-direction: row;
   padding: 5px;
 `;
@@ -73,9 +69,9 @@ export const AddButton = styled(BuyButton)`
 
 export const FavoriteButton = styled(RectButton)`
   position: absolute;
-  padding: 15px;
   align-items: center;
   justify-content: center;
   align-self: flex-start;
-  top: -160px;
+  top: 0;
+  left: 5px;
 `;

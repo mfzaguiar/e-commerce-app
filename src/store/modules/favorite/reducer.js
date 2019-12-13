@@ -5,7 +5,7 @@ export default function favorite(state = [], action) {
     case '@favorite/ADD_FAVORITE':
       return produce(state, draft => {
         const { product } = action;
-        draft.push(product);
+        draft.push({ ...product, favorite: true });
       });
     case '@favorite/REMOVE_FAVORITE':
       return produce(state, draft => {
@@ -17,6 +17,7 @@ export default function favorite(state = [], action) {
           draft.splice(productIndex, 1);
         }
       });
+
     default:
       return state;
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { FlatList } from 'react-native';
 
 import {
@@ -32,11 +33,22 @@ export default function Home({ navigation }) {
   const [products, setProduts] = useState([]);
   const [title, setTitle] = useState('Ofetas do dia');
 
+  const FavoritedItem = useSelector(state => state.favorite);
+
+  useEffect(() => {
+    const lastItem = FavoritedItem[FavoritedItem.length - 1];
+    setProduts(
+      products.map(p =>
+        p.id === lastItem.id ? { ...p, favorite: !p.favorite } : { ...p }
+      )
+    );
+  }, [FavoritedItem]);
+
   useEffect(() => {
     async function loadProducts() {
       setLoading(true);
       const response = await api.get('products');
-      setProduts(response.data);
+      setProduts(response.data.map(p => ({ ...p, favorite: false })));
       setLoading(false);
     }
     loadProducts();
@@ -156,6 +168,7 @@ export default function Home({ navigation }) {
               <FlatList
                 showsVerticalScrollIndicator={false}
                 numColumns={1}
+                extraData={products}
                 data={products}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item }) => (

@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import * as CartActions from '~/store/modules/cart/actions';
+import * as FavoriteActions from '~/store/modules/favorite/actions';
 import { formatPrice } from '~/util/format';
 import Discount from '~/components/Discount';
 
 import {
   ProductItem,
-  ProductContent,
   LeftContent,
   ProductImage,
   RightContent,
@@ -28,45 +28,47 @@ export default function ProdItem({ navigation, item }) {
   }
 
   function handleFavorite(product) {
-    console.tron.log(product);
+    dispatch(FavoriteActions.addFavorite(product));
   }
 
   return (
-    <ProductItem
-      onPress={() =>
-        navigation.navigate('Product', {
-          product: item,
-          keyScreen: navigation.state.key,
-        })
-      }
-    >
-      <ProductContent>
-        <LeftContent>
-          <ProductImage
-            source={{
-              uri: `${item.images[0]}`,
-            }}
-          />
-          <FavoriteButton onPress={() => handleFavorite(item)}>
-            <FontAwesome name="heart-o" color="#a4a4a4" size={20} />
-          </FavoriteButton>
-          {item.discount > 0 && <Discount>{item.discount}</Discount>}
-        </LeftContent>
-        <RightContent>
-          <Description>{item.title}</Description>
-          <PriceContainer>
-            <Price>
-              {formatPrice(
-                item.price * (item.discount > 0 ? item.discount : 1)
-              )}
-              <PriceInfo> à vista</PriceInfo>
-            </Price>
-          </PriceContainer>
-          <AddButton onPress={() => handleAddProduct(item.id)}>
-            Adicionar
-          </AddButton>
-        </RightContent>
-      </ProductContent>
+    <ProductItem>
+      <LeftContent>
+        <ProductImage
+          source={{
+            uri: `${item.images[0]}`,
+          }}
+        />
+        <FavoriteButton onPress={() => handleFavorite(item)}>
+          {item.favorite ? (
+            <FontAwesome name="heart" color="rgba(255,0,0,0.8)" size={18} />
+          ) : (
+            <FontAwesome name="heart-o" color="#a4a4a4" size={18} />
+          )}
+        </FavoriteButton>
+        {item.discount > 0 && <Discount>{item.discount}</Discount>}
+      </LeftContent>
+      <RightContent>
+        <Description
+          onPress={() =>
+            navigation.navigate('Product', {
+              product: item,
+              keyScreen: navigation.state.key,
+            })
+          }
+        >
+          {item.title}
+        </Description>
+        <PriceContainer>
+          <Price>
+            {formatPrice(item.price * (item.discount > 0 ? item.discount : 1))}
+            <PriceInfo> à vista</PriceInfo>
+          </Price>
+        </PriceContainer>
+        <AddButton onPress={() => handleAddProduct(item.id)}>
+          Adicionar
+        </AddButton>
+      </RightContent>
     </ProductItem>
   );
 }
