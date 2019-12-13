@@ -69,6 +69,12 @@ export const SpinnerLoading = styled(ActivityIndicator).attrs({
   size: 'large',
 })``;
 
+export const Wrapper = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const EmptyImage = styled.Image.attrs({
   resizeMode: 'contain',
 })`

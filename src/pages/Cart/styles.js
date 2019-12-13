@@ -38,6 +38,18 @@ export const FinishButton = styled(RectButton)`
   justify-content: center;
 `;
 
+export const Wrapper = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const EmptyCartImage = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
+  width: ${Dimensions.get('window').width * 1};
+`;
+
 export const BuyButton = styled(RectButton)`
   background: ${colors.primary};
   border-radius: 4px;
@@ -53,9 +65,3 @@ export const ButtonText = styled(CustomText).attrs({
   fontSize: 18,
   color: `${colors.white}`,
 })``;
-
-export const EmptyCartImage = styled.Image.attrs({
-  resizeMode: 'contain',
-})`
-  width: ${Dimensions.get('window').width * 1};
-`;

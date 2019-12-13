@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
-import { Text } from 'react-native';
 import { formatPrice } from '~/util/format';
 
 import {
@@ -10,13 +9,12 @@ import {
   TotalText,
   TotalPrice,
   FinishButton,
+  Wrapper,
   BuyButton,
   ButtonText,
   EmptyCartImage,
 } from './styles';
 import ProductCart from '~/components/ProductCart';
-import TabIcon from '~/components/TabIcon';
-import colors from '~/styles/colors';
 import emptyCart from '~/assets/images/empty-bag.png';
 
 export default function Cart({ navigation }) {
@@ -34,12 +32,6 @@ export default function Cart({ navigation }) {
       }, 0)
     )
   );
-
-  const cartSize = useSelector(state => state.cart.length);
-
-  useEffect(() => {
-    navigation.setParams({ cart: Number(cartSize || 0) });
-  }, [cartSize]);
 
   return (
     <Container>
@@ -62,26 +54,13 @@ export default function Cart({ navigation }) {
           </FinishButton>
         </>
       ) : (
-        <>
+        <Wrapper>
           <EmptyCartImage source={emptyCart} />
           <BuyButton onPress={() => navigation.navigate('HomeRoute')}>
             <ButtonText>Ir às compras</ButtonText>
           </BuyButton>
-        </>
+        </Wrapper>
       )}
     </Container>
   );
 }
-
-Cart.navigationOptions = ({ navigation }) => {
-  let cart = 0;
-  if (navigation.state.params) {
-    cart = navigation.state.params.cart;
-  }
-  return {
-    tabBarLabel: <Text style={{ fontSize: 12 }}>Carrinho</Text>,
-    tabBarIcon: props => <TabIcon name="shopping-cart" {...props} />,
-    tabBarBadge: cart ? cart : false,
-    tabBarColor: `${colors.primary}`,
-  };
-};

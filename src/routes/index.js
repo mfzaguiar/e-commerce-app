@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import { Text } from 'react-native';
 import TabIcon from '~/components/TabIcon';
+import TabStateIcon from '~/components/TabStateIcon';
 
 import Home from '~/pages/Home';
 import Deals from '~/pages/Deals';
@@ -44,20 +46,33 @@ const DealsRoute = createSwitchNavigator(
   }
 );
 
+const CartRoute = createSwitchNavigator(
+  {
+    Cart,
+  },
+  {
+    initialRouteName: 'Cart',
+    navigationOptions: {
+      tabBarColor: colors.primary,
+      tabBarLabel: <Text style={{ fontSize: 12 }}>Carrinho</Text>,
+      tabBarIcon: props => <TabStateIcon name="shopping-cart" {...props} />,
+    },
+  }
+);
+
 const BottomRoutes = createMaterialBottomTabNavigator(
   {
     HomeRoute,
     DealsRoute,
     Favorite,
-    Cart,
+    CartRoute,
     Profile,
   },
   {
-    initialRouteName: 'Cart',
+    initialRouteName: 'HomeRoute',
     activeColor: '#fff',
     inactiveColor: 'rgba(255,255,255,0.5)',
     labeled: true,
-    shifting: true,
   }
 );
 

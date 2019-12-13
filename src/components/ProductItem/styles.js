@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 import BuyButton from '~/components/BuyButton';
 import colors from '~/styles/colors';
 
@@ -68,4 +69,13 @@ export const ProductActions = styled.View`
 
 export const AddButton = styled(BuyButton)`
   height: 50px;
+`;
+
+export const FavoriteButton = styled(RectButton)`
+  position: absolute;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  top: -160px;
 `;

@@ -13,6 +13,6 @@ export const Container = styled.View`
 
 export const DiscountText = styled(CustomText).attrs({
   fontFamily: 'roboto-bold',
-  fontSize: 10,
+  fontSize: 12,
   color: '#fff',
 })``;

@@ -17,6 +17,7 @@ import {
   Price,
   PriceInfo,
   AddButton,
+  FavoriteButton,
 } from './styles';
 
 export default function ProdItem({ navigation, item }) {
@@ -24,6 +25,10 @@ export default function ProdItem({ navigation, item }) {
 
   function handleAddProduct(id) {
     dispatch(CartActions.addToCartRequest(id));
+  }
+
+  function handleFavorite(product) {
+    console.tron.log(product);
   }
 
   return (
@@ -42,6 +47,9 @@ export default function ProdItem({ navigation, item }) {
               uri: `${item.images[0]}`,
             }}
           />
+          <FavoriteButton onPress={() => handleFavorite(item)}>
+            <FontAwesome name="heart-o" color="#a4a4a4" size={20} />
+          </FavoriteButton>
           {item.discount > 0 && <Discount>{item.discount}</Discount>}
         </LeftContent>
         <RightContent>
@@ -53,7 +61,6 @@ export default function ProdItem({ navigation, item }) {
               )}
               <PriceInfo> à vista</PriceInfo>
             </Price>
-            <FontAwesome name="heart" color="#737373" size={20} />
           </PriceContainer>
           <AddButton onPress={() => handleAddProduct(item.id)}>
             Adicionar

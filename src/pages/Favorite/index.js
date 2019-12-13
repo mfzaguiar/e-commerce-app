@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
-// import { Container } from './styles';
+import { Container, Wrapper, EmptyFavorite } from './styles';
 import TabIcon from '~/components/TabIcon';
 import colors from '~/styles/colors';
+import emptyFavorite from '~/assets/images/empty-favorite.png';
 
 export default function Favorite() {
   return (
-    <View>
-      <Text>Favoritos</Text>
-    </View>
+    <Container>
+      <Wrapper>
+        <EmptyFavorite source={emptyFavorite} />
+      </Wrapper>
+    </Container>
   );
 }
 

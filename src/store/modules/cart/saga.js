@@ -16,9 +16,9 @@ function* addToCart({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    Toast.show('Produto indisponível no estoque', {
+    Toast.show('Quantidade indisponível no estoque', {
       duration: Toast.durations.SHORT,
-      position: Toast.positions.BOTTOM,
+      position: -75,
       backgroundColor: 'red',
       shadow: true,
       hideOnPress: true,
@@ -53,7 +53,7 @@ function* updateAmount({ id, amount }) {
   if (amount > stockAmount) {
     Toast.show('Quantidade indisponível no estoque', {
       duration: Toast.durations.SHORT,
-      position: Toast.positions.BOTTOM,
+      position: -75,
       backgroundColor: 'red',
       shadow: true,
       hideOnPress: true,
