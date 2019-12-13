@@ -1,13 +1,6 @@
-export function addFavorite(product) {
+export function toggleFavorite(product) {
   return {
-    type: '@favorite/ADD_FAVORITE',
+    type: '@favorite/TOGGLE_FAVORITE',
     product,
-  };
-}
-
-export function removeFavorite(id) {
-  return {
-    type: '@favorite/REMOVE_FAVORITE',
-    id,
   };
 }

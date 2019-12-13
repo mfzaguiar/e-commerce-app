@@ -1,5 +1,5 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import * as CartActions from '~/store/modules/cart/actions';
@@ -21,14 +21,26 @@ import {
 } from './styles';
 
 export default function ProdItem({ navigation, item }) {
+  const [favorited, setFavorited] = useState(false);
   const dispatch = useDispatch();
+
+  const favoritedItem = useSelector(state => state.favorite);
+
+  useEffect(() => {
+    const favItem = favoritedItem.filter(f => f.id === item.id);
+    if (favItem >= 0) {
+      setFavorited(true);
+    } else {
+      setFavorited(false);
+    }
+  }, [favoritedItem]);
 
   function handleAddProduct(id) {
     dispatch(CartActions.addToCartRequest(id));
   }
 
   function handleFavorite(product) {
-    dispatch(FavoriteActions.addFavorite(product));
+    dispatch(FavoriteActions.toggleFavorite(product));
   }
 
   return (
@@ -40,7 +52,7 @@ export default function ProdItem({ navigation, item }) {
           }}
         />
         <FavoriteButton onPress={() => handleFavorite(item)}>
-          {item.favorite ? (
+          {!favorited ? (
             <FontAwesome name="heart" color="rgba(255,0,0,0.8)" size={18} />
           ) : (
             <FontAwesome name="heart-o" color="#a4a4a4" size={18} />
