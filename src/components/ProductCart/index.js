@@ -1,9 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { RectButton } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import * as CartActions from '~/store/modules/cart/actions';
+import * as FavoriteActions from '~/store/modules/favorite/actions';
 
 import {
   ProductItem,
@@ -36,6 +37,10 @@ export default function ProductCart({ item }) {
     dispatch(CartActions.updateAmountRequest(product.id, product.amount - 1));
   }
 
+  function handleFavorite(product) {
+    dispatch(FavoriteActions.toggleFavorite(product));
+  }
+
   return (
     <ProductItem>
       <ProductContent>
@@ -46,10 +51,12 @@ export default function ProductCart({ item }) {
             }}
           />
           <WrapperActions>
-            <FontAwesome name="heart" color="#737373" size={20} />
-            <RectButton onPress={() => handleDeleteProduct(item.id)}>
+            <TouchableOpacity onPress={() => handleFavorite(item)}>
+              <FontAwesome name="heart-o" color="#a4a4a4" size={20} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => handleDeleteProduct(item.id)}>
               <FontAwesome name="trash" color="#737373" size={20} />
-            </RectButton>
+            </TouchableOpacity>
           </WrapperActions>
         </LeftContent>
         <RightContent>

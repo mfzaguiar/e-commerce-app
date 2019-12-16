@@ -1,23 +1,36 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { useSelector } from 'react-redux';
+import { Text, FlatList } from 'react-native';
 
 import { Container, Wrapper, EmptyFavorite } from './styles';
-import TabIcon from '~/components/TabIcon';
+import TabStateIcon from '~/components/TabStateIcon';
 import colors from '~/styles/colors';
 import emptyFavorite from '~/assets/images/empty-favorite.png';
+import ProductCart from '~/components/ProductItem';
 
 export default function Favorite() {
+  const FavoriteData = useSelector(state => state.favorite);
+
   return (
     <Container>
-      <Wrapper>
-        <EmptyFavorite source={emptyFavorite} />
-      </Wrapper>
+      {FavoriteData.length > 0 ? (
+        <FlatList
+          numColumns={1}
+          data={FavoriteData}
+          keyExtractor={item => String(item.id)}
+          renderItem={({ item }) => <ProductCart item={item} />}
+        />
+      ) : (
+        <Wrapper>
+          <EmptyFavorite source={emptyFavorite} />
+        </Wrapper>
+      )}
     </Container>
   );
 }
 
 Favorite.navigationOptions = {
   tabBarLabel: <Text style={{ fontSize: 12 }}>Favoritos</Text>,
-  tabBarIcon: props => <TabIcon name="heart" {...props} />,
+  tabBarIcon: props => <TabStateIcon name="heart" {...props} />,
   tabBarColor: `${colors.primary}`,
 };

@@ -2,22 +2,28 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
-import { Container, Box, Number } from './styles';
+import { Container, Circle, Number } from './styles';
 
 export default function TabIcon({ name, tintColor }) {
   const cartSize = useSelector(state => state.cart.length);
+  const favoriteSize = useSelector(state => state.favorite.length);
 
   useEffect(() => {}, [cartSize]);
 
   return (
     <Container>
       <FontAwesome name={name} size={24} color={tintColor} />
-
-      {cartSize > 0 && (
-        <Box>
-          <Number>{cartSize}</Number>
-        </Box>
-      )}
+      {name === 'shopping-cart'
+        ? cartSize > 0 && (
+            <Circle>
+              <Number>{cartSize}</Number>
+            </Circle>
+          )
+        : favoriteSize > 0 && (
+            <Circle>
+              <Number>{favoriteSize}</Number>
+            </Circle>
+          )}
     </Container>
   );
 }

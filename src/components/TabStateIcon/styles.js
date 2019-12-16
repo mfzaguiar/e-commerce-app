@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View``;
 
-export const Box = styled.View`
+export const Circle = styled.View`
   position: absolute;
   height: 16px;
   width: 16px;

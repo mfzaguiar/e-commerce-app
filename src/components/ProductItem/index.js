@@ -24,11 +24,12 @@ export default function ProdItem({ navigation, item }) {
   const [favorited, setFavorited] = useState(false);
   const dispatch = useDispatch();
 
-  const favoritedItem = useSelector(state => state.favorite);
+  const favoritedItem = useSelector(state =>
+    state.favorite.filter(f => f.id === item.id)
+  );
 
   useEffect(() => {
-    const favItem = favoritedItem.filter(f => f.id === item.id);
-    if (favItem >= 0) {
+    if (favoritedItem >= 0) {
       setFavorited(true);
     } else {
       setFavorited(false);
