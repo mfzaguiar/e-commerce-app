@@ -133,5 +133,18 @@
       "discount": 0.9
     }
   ],
-  "profile": { "name": "Matheus", "email": "first_mf@hotmail.com" }
+  "profile": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@hotmail.com",
+      "password": 12345
+    },
+    {
+      "id": 2,
+      "name": "teste",
+      "email": "teste@hotmail.com",
+      "password": 123
+    }
+  ]
 }

@@ -12,7 +12,7 @@ import Deals from '~/pages/Deals';
 import Favorite from '~/pages/Favorite';
 import Profile from '~/pages/Profile';
 import Cart from '~/pages/Cart';
-import Login from '~/pages/Login';
+import SignIn from '~/pages/SignIn';
 import Product from '~/components/Product';
 
 import colors from '~/styles/colors';
@@ -61,10 +61,6 @@ const CartRoute = createSwitchNavigator(
   }
 );
 
-const LoginPage = createSwitchNavigator({
-  Login,
-});
-
 const BottomRoutes = createMaterialBottomTabNavigator(
   {
     HomeRoute,
@@ -81,7 +77,17 @@ const BottomRoutes = createMaterialBottomTabNavigator(
   }
 );
 
+const EntryPoint = createSwitchNavigator(
+  {
+    SignIn,
+    BottomRoutes,
+  },
+  {
+    initialRouteName: 'SignIn',
+  }
+);
+
 // const Routes = createAppContainer(BottomRoutes);
-const Routes = createAppContainer(LoginPage);
+const Routes = createAppContainer(EntryPoint);
 
 export default Routes;

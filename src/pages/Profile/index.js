@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons/';
+
+import * as ProfileActions from '~/store/modules/profile/actions';
 
 import {
   Container,
@@ -17,7 +20,15 @@ import ProfileButton from '~/components/ProfileButton';
 import TabIcon from '~/components/TabIcon';
 import colors from '~/styles/colors';
 
-export default function Profile() {
+export default function Profile({ navigation }) {
+  const dispatch = useDispatch();
+  const UserProfile = useSelector(state => state.profile);
+
+  function handleSignOut() {
+    dispatch(ProfileActions.SignOut());
+    navigation.navigate('SignIn');
+  }
+
   return (
     <Container>
       <HeaderProfile>
@@ -27,8 +38,8 @@ export default function Profile() {
           }}
         />
         <ProfileInfo>
-          <Name>Steven T. Calle</Name>
-          <Email>StevenTCalle@armyspy.com</Email>
+          <Name>{UserProfile.name}</Name>
+          <Email>{UserProfile.email}</Email>
         </ProfileInfo>
       </HeaderProfile>
       <ProfileButton name="envelope-o" margin={10}>
@@ -41,7 +52,7 @@ export default function Profile() {
       <ProfileButton name="lock" margin={10}>
         Senha de acesso
       </ProfileButton>
-      <SingOutButton>
+      <SingOutButton onPress={handleSignOut}>
         <SignOutText>Sair</SignOutText>
         <FontAwesome
           style={{ marginLeft: 20 }}

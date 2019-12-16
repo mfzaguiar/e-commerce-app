@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import Toast from 'react-native-root-toast';
 
 import {
   Container,
@@ -9,15 +11,47 @@ import {
   ButtonText,
 } from './styles';
 
+import * as ProfileActions from '~/store/modules/profile/actions';
+import api from '~/services/api';
+
 import TInput from '~/components/Input';
 import logo from '~/assets/icons/logo.png';
 
-export default function Login() {
+export default function SignIn({ navigation }) {
+  const dispatch = useDispatch();
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  async function handleLogin() {
+    const response = await api.get('profile', {
+      params: {
+        q: `${email}`,
+      },
+    });
+
+    if (response.data.length > 0) {
+      if (String(response.data[0].password) === String(password)) {
+        const user = {
+          email: response.data[0].email,
+          name: response.data[0].name,
+        };
+        dispatch(ProfileActions.SignIn(user));
+        navigation.navigate('BottomRoutes');
+      } else {
+        setPassword('');
+        Toast.show('Email ou senha inválidos', {
+          duration: Toast.durations.SHORT,
+          position: 35,
+          backgroundColor: 'red',
+          shadow: true,
+          hideOnPress: true,
+        });
+      }
+    }
+  }
 
   return (
     <Container>
@@ -47,10 +81,10 @@ export default function Login() {
           ref={passwordRef}
           value={password}
           onChangeText={setPassword}
-          onSubmitEditing={() => console.tron.log(email, password)}
+          onSubmitEditing={handleLogin}
         />
       </Wrapper>
-      <LoginButton>
+      <LoginButton onPress={handleLogin}>
         <ButtonText>Login</ButtonText>
       </LoginButton>
     </Container>
