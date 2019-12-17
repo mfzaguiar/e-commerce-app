@@ -5,6 +5,7 @@ const colors = {
 
   primary: 'tomato',
   background: '#f3f5f5',
+  discount: 'rgba(255, 0, 0, 0.6)',
 };
 
 export default colors;

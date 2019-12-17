@@ -7,7 +7,7 @@ export const Circle = styled.View`
   height: 16px;
   width: 16px;
   border-radius: 8px;
-  background: red;
+  background: rgba(255, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
   top: -5px;

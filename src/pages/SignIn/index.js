@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { ActivityIndicator } from 'react-native';
 import { useDispatch } from 'react-redux';
 import Toast from 'react-native-root-toast';
 
@@ -22,6 +23,7 @@ export default function SignIn({ navigation }) {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -39,6 +41,7 @@ export default function SignIn({ navigation }) {
           name: response.data[0].name,
         };
         dispatch(ProfileActions.SignIn(user));
+
         navigation.navigate('BottomRoutes');
       } else {
         setPassword('');
@@ -84,8 +87,18 @@ export default function SignIn({ navigation }) {
           onSubmitEditing={handleLogin}
         />
       </Wrapper>
-      <LoginButton onPress={handleLogin}>
-        <ButtonText>Login</ButtonText>
+      <LoginButton
+        onPress={() => {
+          setLoading(true);
+          handleLogin();
+          setLoading(false);
+        }}
+      >
+        {!loading ? (
+          <ButtonText>Login</ButtonText>
+        ) : (
+          <ActivityIndicator color="tomato" size="large" />
+        )}
       </LoginButton>
     </Container>
   );

@@ -26,17 +26,20 @@ export const DepartmentItem = styled.View`
 `;
 
 export const DepartmentLogo = styled.TouchableOpacity`
-  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
   background: ${colors.primary};
   border-width: 3px;
   border-color: ${colors.white};
+  align-items: center;
+  justify-content: center;
 `;
 
 export const DepartmentImage = styled.Image.attrs({
   resizeMode: 'center',
 })`
-  height: 60px;
-  width: 60px;
+  flex: 1;
 `;
 
 export const DepartmentText = styled.Text`

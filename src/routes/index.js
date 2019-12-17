@@ -83,7 +83,7 @@ const EntryPoint = createSwitchNavigator(
     BottomRoutes,
   },
   {
-    initialRouteName: 'SignIn',
+    initialRouteName: 'BottomRoutes',
   }
 );
 

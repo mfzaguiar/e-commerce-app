@@ -54,7 +54,7 @@ export default function ProdItem({ navigation, item }) {
         />
         <FavoriteButton onPress={() => handleFavorite(item)}>
           {!favorited ? (
-            <FontAwesome name="heart" color="rgba(255,0,0,0.8)" size={18} />
+            <FontAwesome name="heart" color="rgba(255, 0, 0, 0.6)" size={18} />
           ) : (
             <FontAwesome name="heart-o" color="#a4a4a4" size={18} />
           )}

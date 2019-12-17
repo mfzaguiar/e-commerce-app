@@ -145,9 +145,9 @@ export default function Home({ navigation }) {
       </DepartmentContainer>
 
       <SalesContainer>
-        <SalesHeader>
+        {/* <SalesHeader>
           <SalesText>{title}</SalesText>
-        </SalesHeader>
+        </SalesHeader> */}
         {loading ? (
           <SpinnerLoading />
         ) : (

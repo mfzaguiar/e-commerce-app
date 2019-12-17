@@ -32,13 +32,13 @@ export const LoginButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   align-self: stretch;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
   margin-top: 20px;
   border-radius: 4px;
 `;
 
 export const ButtonText = styled(CustomText).attrs({
   fontFamily: 'roboto-bold',
-  fontSize: 16,
-  color: `${colors.white}`,
+  fontSize: 20,
+  color: `${colors.primary}`,
 })``;
