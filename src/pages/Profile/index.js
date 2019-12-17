@@ -57,7 +57,7 @@ export default function Profile({ navigation }) {
         <FontAwesome
           style={{ marginLeft: 20 }}
           name="sign-out"
-          color="tomato"
+          color="rgba(255, 0, 0, 0.6)"
           size={20}
         />
       </SingOutButton>

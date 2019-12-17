@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
+import CustomText from '~/components/CustomText';
 import BuyButton from '~/components/BuyButton';
+
 import colors from '~/styles/colors';
 
 export const ProductItem = styled.TouchableOpacity`
@@ -30,32 +32,31 @@ export const RightContent = styled.View`
   justify-content: space-between;
 `;
 
-export const Description = styled.Text.attrs({
+export const Description = styled(CustomText).attrs({
+  fontFamily: 'roboto-bold',
+  fontSize: 14,
+  color: '#737373',
   numberOfLines: 2,
-})`
-  font-weight: bold;
-  font-size: 14px;
-  color: #737373;
-`;
+})``;
 
-export const Price = styled.Text`
-  font-size: 22px;
-  color: ${colors.primary};
-  font-weight: bold;
-  letter-spacing: 1;
-`;
+export const Price = styled(CustomText).attrs({
+  fontFamily: 'roboto-bold',
+  fontSize: 22,
+  color: `${colors.primary}`,
+  letterSpacing: 1,
+})``;
 
-export const PriceInfo = styled.Text`
-  font-size: 18px;
-  font-weight: normal;
-  color: ${colors.darkgrey};
-`;
+export const PriceInfo = styled(CustomText).attrs({
+  fontFamily: 'roboto-regular',
+  fontSize: 18,
+  color: `${colors.darkgrey}`,
+})``;
 
 export const PriceContainer = styled.View`
   flex-direction: row;
   align-self: stretch;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const ProductActions = styled.View`
@@ -74,4 +75,10 @@ export const FavoriteButton = styled(RectButton)`
   align-self: flex-start;
   top: 0;
   left: 5px;
+`;
+
+export const RatingWrapper = styled.View`
+  background: rgba(255, 255, 255, 0.6);
+  align-items: center;
+  top: -18;
 `;

@@ -2,7 +2,9 @@ import styled from 'styled-components/native';
 import Button from '~/components/BuyButton';
 import colors from '~/styles/colors';
 
-export const Container = styled.ScrollView`
+export const Container = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})`
   flex: 1;
   background-color: #828282;
 `;

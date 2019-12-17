@@ -88,7 +88,7 @@
       "rating": 4,
       "numrating": 5,
       "images": [
-        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcReDrJWhGrBYGnA0i8pBjUifvfGmogejmTShjhqIRBp6pFa-9LmHwyoRZ67j4rEMoy5s1BW_x4tCmMIK4kSrm6XhR5QZNJGVhBCWGB5ifm8&usqp=CAE"
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRCmftiP_hFdt7GYBl-IpL-rl8oy13APczrkGyFWms4X8ya8F3DejbrgOU_JKIj8cOMnI9HBGx1G_H9NAFF-ycQza4WmNk4sgL0dZJAGy-puyY4HbS6_7mhHns&usqp=CAE"
       ],
       "price": 3150,
       "discount": 0.95
@@ -130,6 +130,19 @@
         "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTR6GZNWhgruoIf3QDbimWH9DAdM0-PesKFH1jWbHz22fn0QUFhI2Y6RJB1O1snZ2cV8J6_3T9pg-RRmxtTd5bOKigB-ayymOK4EMs-RSoTPkRone3vt8vd&usqp=CAE"
       ],
       "price": 9050.55,
+      "discount": 0.9
+    },
+    {
+      "id": 8,
+      "departmentId": 4,
+      "title": "Console Sony PlayStation 4 Pro Neo Versa Fortnite, 1TB, Preto - CUH-7214B",
+      "description": "O pacote inclui um sistema PlayStation 4 Pro de 1TB preto onyx, um controle sem fio DUALSHOCK 4 correspondente e um código para o seguinte conteúdo exclusivo de Fortnite: traje épico Neo Versa, mochila épica Neo Phrenzy e 2.000 V-Bucks.",
+      "rating": 4,
+      "numrating": 15,
+      "images": [
+        "https://images5.kabum.com.br/produtos/fotos/107285/console-sony-playstation-4-pro-neo-versa-fortnite-1tb-preto-cuh-7214b_console-sony-playstation-4-pro-neo-versa-fortnite-1tb-preto-cuh-7214b_1572531645_gg.jpg"
+      ],
+      "price": 2500.0,
       "discount": 0.9
     }
   ],

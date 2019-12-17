@@ -7,6 +7,8 @@ export default function CustomText({
   fontFamily = 'roboto-regular',
   fontSize = 20,
   color = '#fff',
+  numberOfLines = 1,
+  letterSpacing = 0,
 }) {
   const [fontLoad, setFontLoad] = useState(false);
 
@@ -24,10 +26,12 @@ export default function CustomText({
   return (
     fontLoad && (
       <Text
+        numberOfLines={numberOfLines}
         style={{
           fontFamily,
           fontSize,
           color,
+          letterSpacing,
         }}
       >
         {children}

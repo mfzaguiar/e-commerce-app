@@ -5,6 +5,7 @@ import { FontAwesome } from '@expo/vector-icons/';
 import * as CartActions from '~/store/modules/cart/actions';
 import * as FavoriteActions from '~/store/modules/favorite/actions';
 import { formatPrice } from '~/util/format';
+import Rating from '~/components/Rating';
 import Discount from '~/components/Discount';
 
 import {
@@ -18,6 +19,7 @@ import {
   PriceInfo,
   AddButton,
   FavoriteButton,
+  RatingWrapper,
 } from './styles';
 
 export default function ProdItem({ navigation, item }) {
@@ -52,6 +54,15 @@ export default function ProdItem({ navigation, item }) {
             uri: `${item.images[0]}`,
           }}
         />
+        <RatingWrapper>
+          <Rating
+            size={11}
+            fontSize={10}
+            defaultRating={item.rating}
+            defaultNumRating={item.numrating}
+          />
+        </RatingWrapper>
+
         <FavoriteButton onPress={() => handleFavorite(item)}>
           {!favorited ? (
             <FontAwesome name="heart" color="rgba(255, 0, 0, 0.6)" size={18} />
@@ -72,6 +83,7 @@ export default function ProdItem({ navigation, item }) {
         >
           {item.title}
         </Description>
+
         <PriceContainer>
           <Price>
             {formatPrice(item.price * (item.discount > 0 ? item.discount : 1))}

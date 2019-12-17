@@ -9,7 +9,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   align-self: flex-end;
-  top: -125px;
+  top: -150px;
 `;
 
 export const DiscountText = styled(CustomText).attrs({

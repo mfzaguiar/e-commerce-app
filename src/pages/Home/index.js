@@ -30,7 +30,6 @@ import notfound from '~/assets/images/not-found.png';
 export default function Home({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
-  const [title, setTitle] = useState('Ofetas do dia');
 
   useEffect(() => {
     async function loadProducts() {
@@ -80,7 +79,6 @@ export default function Home({ navigation }) {
           <DepartmentLogo
             onPress={() => {
               handleLoadDepartment('todos');
-              setTitle('Ofertas do dia');
             }}
           >
             <DepartmentImage source={all} />
@@ -91,7 +89,6 @@ export default function Home({ navigation }) {
           <DepartmentLogo
             onPress={() => {
               handleLoadDepartment('drone');
-              setTitle('Drone');
             }}
           >
             <DepartmentImage source={drone} />
@@ -102,7 +99,6 @@ export default function Home({ navigation }) {
           <DepartmentLogo
             onPress={() => {
               handleLoadDepartment('tv');
-              setTitle('Tv');
             }}
           >
             <DepartmentImage source={tv} />
@@ -113,7 +109,6 @@ export default function Home({ navigation }) {
           <DepartmentLogo
             onPress={() => {
               handleLoadDepartment('laptop');
-              setTitle('Notebook');
             }}
           >
             <DepartmentImage source={laptop} />
@@ -124,7 +119,6 @@ export default function Home({ navigation }) {
           <DepartmentLogo
             onPress={() => {
               handleLoadDepartment('videogames');
-              setTitle('Video Games');
             }}
           >
             <DepartmentImage source={videogames} />
@@ -135,7 +129,6 @@ export default function Home({ navigation }) {
           <DepartmentLogo
             onPress={() => {
               handleLoadDepartment('smartphone');
-              setTitle('Smartphone');
             }}
           >
             <DepartmentImage source={smartphone} />
@@ -145,9 +138,6 @@ export default function Home({ navigation }) {
       </DepartmentContainer>
 
       <SalesContainer>
-        {/* <SalesHeader>
-          <SalesText>{title}</SalesText>
-        </SalesHeader> */}
         {loading ? (
           <SpinnerLoading />
         ) : (
@@ -173,9 +163,3 @@ export default function Home({ navigation }) {
     </Container>
   );
 }
-
-// Home.navigationOptions = {
-//   tabBarLabel: <Text style={{ fontSize: 12 }}>Início</Text>,
-//   tabBarIcon: props => <TabIcon name="home" {...props} />,
-//   tabBarColor: `${colors.primary}`,
-// };

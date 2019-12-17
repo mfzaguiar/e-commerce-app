@@ -8,12 +8,13 @@ export const Button = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background: tomato;
+  border-radius: 4px;
 `;
 
 export const Text = styled.Text`
   font-weight: bold;
   color: ${colors.white};
-  font-size: 22px;
+  font-size: 20px;
 `;
 
 export const Icon = styled(FontAwesome).attrs({
