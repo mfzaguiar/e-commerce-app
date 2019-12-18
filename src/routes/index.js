@@ -25,6 +25,9 @@ const HomeRoute = createSwitchNavigator(
   {
     initialRouteName: 'Home',
     navigationOptions: {
+      tabBarOnPress: ({ navigation }) => {
+        navigation.navigate('Home');
+      },
       tabBarColor: colors.primary,
       tabBarLabel: <Text style={{ fontSize: 12 }}>Início</Text>,
       tabBarIcon: props => <TabIcon name="home" {...props} />,
@@ -40,6 +43,9 @@ const DealsRoute = createSwitchNavigator(
   {
     initialRouteName: 'Deals',
     navigationOptions: {
+      tabBarOnPress: ({ navigation }) => {
+        navigation.navigate('Deals');
+      },
       tabBarColor: '#1C1919',
       tabBarLabel: <Text style={{ fontSize: 12 }}>Ofertas</Text>,
       tabBarIcon: props => <TabIcon name="tag" {...props} />,
