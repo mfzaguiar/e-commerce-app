@@ -40,15 +40,15 @@ export default function MyCarousel({ data, dataSize }) {
           paddingVertical: 0,
           height: 20,
           alignSelf: 'stretch',
-          backgroundColor: 'rgba(0,0,0,0.6)',
+          backgroundColor: '#fff',
         }}
         dotStyle={{
           width: 10,
           height: 10,
           borderRadius: 5,
-          backgroundColor: 'rgba(255,255,255,0.72)',
+          backgroundColor: 'tomato',
         }}
-        inactiveDotStyle={{ backgroundColor: 'white' }}
+        inactiveDotStyle={{ backgroundColor: '#a4a4a4' }}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
       />

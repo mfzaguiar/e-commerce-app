@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
+
 import { formatPrice } from '~/util/format';
 import { FontAwesome } from '@expo/vector-icons/';
+
+import * as FavoriteActions from '~/store/modules/favorite/actions';
+import * as CartActions from '~/store/modules/cart/actions';
 
 import {
   Header,
   Container,
   ProductInfo,
   ProductHeader,
-  Actions,
   Name,
   PriceOriginal,
   PriceContainer,
@@ -21,11 +25,33 @@ import {
 
 import Rating from '~/components/Rating';
 import Carousel from '~/components/Carousel';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Product({ navigation }) {
   const product = navigation.getParam('product');
   const { params } = navigation.state;
+
+  const [favorited, setFavorited] = useState(false);
+  const dispatch = useDispatch();
+
+  const favoritedItem = useSelector(state =>
+    state.favorite.filter(f => f.id === product.id)
+  );
+
+  useEffect(() => {
+    if (favoritedItem >= 0) {
+      setFavorited(true);
+    } else {
+      setFavorited(false);
+    }
+  }, [favoritedItem]);
+
+  function handleAddProduct(id) {
+    dispatch(CartActions.addToCartRequest(id));
+  }
+
+  function handleFavorite(product) {
+    dispatch(FavoriteActions.toggleFavorite(product));
+  }
 
   return (
     <Container>
@@ -33,28 +59,38 @@ export default function Product({ navigation }) {
         <TouchableOpacity onPress={() => navigation.navigate(params.keyScreen)}>
           <FontAwesome name="arrow-left" color="#fff" size={18} />
         </TouchableOpacity>
-        <Name>{product.title}</Name>
+        <ProductHeader>
+          <Rating
+            Textcolor="rgba(255,255,255,0.8)"
+            StarColor="rgba(255,255,255,0.8)"
+            size={18}
+            defaultRating={product.rating}
+            defaultNumRating={product.numrating}
+          />
+          <RectButton onPress={() => handleFavorite(product)}>
+            {!favorited ? (
+              <FontAwesome
+                name="heart"
+                color="rgba(255, 0, 0, 0.6)"
+                size={20}
+              />
+            ) : (
+              <FontAwesome
+                name="heart-o"
+                color="rgba(255,255,255,0.8)"
+                size={20}
+              />
+            )}
+          </RectButton>
+        </ProductHeader>
       </Header>
       <Carousel
         data={product.images}
         dataSize={Object.keys({ ...product.images }).length}
       />
       <ProductInfo>
-        <ProductHeader>
-          <Rating
-            defaultRating={product.rating}
-            defaultNumRating={product.numrating}
-          />
-          <Actions>
-            <FontAwesome name="heart" size={25} color="#EB5757" />
-            <FontAwesome
-              name="share-alt"
-              style={{ marginLeft: 10 }}
-              size={25}
-              color="#2D9CDB"
-            />
-          </Actions>
-        </ProductHeader>
+        <Name>{product.title}</Name>
+
         <ProductFinish>
           {product.discount ? (
             <PriceContainer>
@@ -69,7 +105,9 @@ export default function Product({ navigation }) {
             </PriceContainer>
           )}
 
-          <AddButton>Comprar</AddButton>
+          <AddButton onPress={() => handleAddProduct(product.id)}>
+            Adicionar
+          </AddButton>
         </ProductFinish>
         <Description>{product.description}</Description>
       </ProductInfo>

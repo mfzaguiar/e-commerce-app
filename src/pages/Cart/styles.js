@@ -18,17 +18,17 @@ export const TotalWrapper = styled.View`
   margin: 5px 0;
 `;
 
-export const TotalText = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 16,
-  color: `${colors.grey}`,
-})``;
+export const TotalText = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 16px;
+  color: ${colors.grey};
+`;
 
-export const TotalPrice = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 28,
-  color: 'black',
-})``;
+export const TotalPrice = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 28px;
+  color: black;
+`;
 
 export const FinishButton = styled(RectButton)`
   background: ${colors.primary};
@@ -60,8 +60,8 @@ export const BuyButton = styled(RectButton)`
   width: 200px;
 `;
 
-export const ButtonText = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 18,
-  color: `${colors.white}`,
-})``;
+export const ButtonText = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 18px;
+  color: ${colors.white};
+`;

@@ -15,11 +15,11 @@ export const Button = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const Title = styled(CustomText).attrs({
-  fontFamily: 'roboto-regular',
-  color: `${colors.grey}`,
-  fontSize: 15,
-})``;
+export const Title = styled(CustomText)`
+  font-family: 'roboto-regular';
+  font-size: 15px;
+  color: ${colors.grey};
+`;
 
 export const Icon = styled(FontAwesome).attrs({
   color: colors.grey,

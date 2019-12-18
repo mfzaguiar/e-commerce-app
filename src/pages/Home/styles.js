@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import StyledText from '~/components/CustomText';
+import CustomText from '~/components/CustomText';
 import colors from '~/styles/colors';
 import { ActivityIndicator, Dimensions } from 'react-native';
 
@@ -42,11 +42,10 @@ export const DepartmentImage = styled.Image.attrs({
   flex: 1;
 `;
 
-export const DepartmentText = styled.Text`
+export const DepartmentText = styled(CustomText)`
+  font-family: 'roboto-bold';
   font-size: 11px;
-  font-weight: bold;
   color: #737373;
-  margin-top: 5px;
 `;
 
 export const SalesContainer = styled.View`
@@ -59,11 +58,11 @@ export const SalesHeader = styled.View`
   background: rgba(255, 255, 255, 0.9);
 `;
 
-export const SalesText = styled(StyledText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 16,
-  color: '#737373',
-})``;
+export const SalesText = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 16px;
+  color: #737373;
+`;
 
 export const SpinnerLoading = styled(ActivityIndicator).attrs({
   color: 'tomato',

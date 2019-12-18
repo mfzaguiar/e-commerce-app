@@ -35,24 +35,24 @@ export const RightContent = styled.View`
   justify-content: space-evenly;
 `;
 
-export const Description = styled.Text.attrs({
+export const Description = styled(CustomText).attrs({
   numberOfLines: 2,
 })`
-  font-weight: bold;
+  font-family: 'roboto-bold';
   font-size: 14px;
   color: #737373;
 `;
 
-export const Price = styled.Text`
+export const Price = styled(CustomText)`
+  font-family: 'roboto-bold';
   font-size: 20px;
   color: ${colors.primary};
-  font-weight: bold;
   letter-spacing: 1;
 `;
 
-export const Title = styled.Text`
+export const Title = styled(CustomText)`
+  font-family: 'roboto-regular';
   font-size: 12px;
-  font-weight: normal;
   color: ${colors.grey};
 `;
 
@@ -73,11 +73,11 @@ export const ProductActions = styled.View`
   justify-content: flex-end;
 `;
 
-export const AmountText = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 18,
-  color: `${colors.grey}`,
-})``;
+export const AmountText = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 18px;
+  color: ${colors.grey};
+`;
 
 export const IconButton = styled(RectButton)`
   height: 30px;

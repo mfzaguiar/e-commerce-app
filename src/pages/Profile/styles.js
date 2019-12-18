@@ -8,17 +8,17 @@ export const Container = styled.ScrollView.attrs({
   flex: 1;
 `;
 
-export const Name = styled(CustomText).attrs({
-  fontFamily: 'roboto-regular',
-  color: 'black',
-  fontSize: 18,
-})``;
+export const Name = styled(CustomText)`
+  font-family: 'roboto-regular';
+  color: black;
+  font-size: 18px;
+`;
 
-export const Email = styled(CustomText).attrs({
-  fontFamily: 'roboto-regular',
-  color: `${colors.grey}`,
-  fontSize: 15,
-})``;
+export const Email = styled(CustomText)`
+  font-family: 'roboto-regular';
+  color: ${colors.grey};
+  font-size: 15px;
+`;
 
 export const ProfileAvatar = styled.Image`
   height: 40px;
@@ -46,8 +46,8 @@ export const SingOutButton = styled.TouchableOpacity`
   padding: 20px;
 `;
 
-export const SignOutText = styled(CustomText).attrs({
-  fontFamily: 'roboto-regular',
-  color: `rgba(255, 0, 0, 0.6)`,
-  fontSize: 20,
-})``;
+export const SignOutText = styled(CustomText)`
+  font-family: 'roboto-regular';
+  color: rgba(255, 0, 0, 0.6);
+  font-size: 20px;
+`;

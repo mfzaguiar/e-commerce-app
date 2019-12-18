@@ -6,7 +6,7 @@ import { Container, Wrapper, EmptyFavorite } from './styles';
 import TabStateIcon from '~/components/TabStateIcon';
 import colors from '~/styles/colors';
 import emptyFavorite from '~/assets/images/empty-favorite.png';
-import ProductCart from '~/components/ProductItem';
+import ProductItem from '~/components/ProductItem';
 
 export default function Favorite() {
   const FavoriteData = useSelector(state => state.favorite);
@@ -18,7 +18,7 @@ export default function Favorite() {
           numColumns={1}
           data={FavoriteData}
           keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => <ProductCart item={item} />}
+          renderItem={({ item }) => <ProductItem item={item} />}
         />
       ) : (
         <Wrapper>

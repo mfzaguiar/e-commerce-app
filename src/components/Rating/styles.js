@@ -10,7 +10,7 @@ export const StarContainer = styled.View`
 
 export const Label = styled.Text`
   font-size: ${props => props.fontSize && `${props.fontSize}px`};
-  color: ${colors.grey};
+  color: ${props => props.color || colors.grey};
   margin: 0 0 2px 5px;
 `;
 

@@ -33,24 +33,25 @@ export const RightContent = styled.View`
 `;
 
 export const Description = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 14,
-  color: '#737373',
   numberOfLines: 2,
-})``;
+})`
+  font-family: 'roboto-bold';
+  font-size: 14px;
+  color: #737373;
+`;
 
-export const Price = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 22,
-  color: `${colors.primary}`,
-  letterSpacing: 1,
-})``;
+export const Price = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 22px;
+  color: ${colors.primary};
+  letter-spacing: 1;
+`;
 
-export const PriceInfo = styled(CustomText).attrs({
-  fontFamily: 'roboto-regular',
-  fontSize: 18,
-  color: `${colors.darkgrey}`,
-})``;
+export const PriceInfo = styled(CustomText)`
+  font-family: 'roboto-regular';
+  font-size: 18px;
+  color: ${colors.darkgrey};
+`;
 
 export const PriceContainer = styled.View`
   flex-direction: row;

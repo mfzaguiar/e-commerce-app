@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 import * as Font from 'expo-font';
 
-export default function CustomText({
-  children,
-  fontFamily = 'roboto-regular',
-  fontSize = 20,
-  color = '#fff',
-  numberOfLines = 1,
-  letterSpacing = 0,
-}) {
+export default function CustomText({ children, ...rest }) {
   const [fontLoad, setFontLoad] = useState(false);
 
   useEffect(() => {
@@ -23,19 +16,5 @@ export default function CustomText({
     handleFont();
   }, []);
 
-  return (
-    fontLoad && (
-      <Text
-        numberOfLines={numberOfLines}
-        style={{
-          fontFamily,
-          fontSize,
-          color,
-          letterSpacing,
-        }}
-      >
-        {children}
-      </Text>
-    )
-  );
+  return fontLoad && <Text {...rest}>{children}</Text>;
 }

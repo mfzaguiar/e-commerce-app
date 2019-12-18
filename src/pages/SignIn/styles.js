@@ -21,11 +21,11 @@ export const CustomImage = styled.Image.attrs({})`
   margin-bottom: 20px;
 `;
 
-export const Label = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 16,
-  color: `${colors.white}`,
-})``;
+export const Label = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 16;
+  color: ${colors.white};
+`;
 
 export const LoginButton = styled.TouchableOpacity`
   height: 50px;
@@ -37,8 +37,8 @@ export const LoginButton = styled.TouchableOpacity`
   border-radius: 4px;
 `;
 
-export const ButtonText = styled(CustomText).attrs({
-  fontFamily: 'roboto-bold',
-  fontSize: 20,
-  color: `${colors.primary}`,
-})``;
+export const ButtonText = styled(CustomText)`
+  font-family: 'roboto-bold';
+  font-size: 20;
+  color: ${colors.primary};
+`;
