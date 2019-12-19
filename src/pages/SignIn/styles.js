@@ -16,8 +16,10 @@ export const Wrapper = styled.View`
   align-items: flex-start;
 `;
 
-export const CustomImage = styled.Image.attrs({})`
-  height: 80px;
+export const CustomImage = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
+  height: 100px;
   margin-bottom: 20px;
 `;
 

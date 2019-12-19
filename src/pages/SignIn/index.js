@@ -28,6 +28,7 @@ export default function SignIn({ navigation }) {
   const [password, setPassword] = useState('');
 
   async function handleLogin() {
+    setLoading(true);
     const response = await api.get('profile', {
       params: {
         q: `${email}`,
@@ -41,7 +42,6 @@ export default function SignIn({ navigation }) {
           name: response.data[0].name,
         };
         dispatch(ProfileActions.SignIn(user));
-
         navigation.navigate('BottomRoutes');
       } else {
         setPassword('');
@@ -54,6 +54,10 @@ export default function SignIn({ navigation }) {
         });
       }
     }
+
+    return () => {
+      setLoading(false);
+    };
   }
 
   return (
@@ -89,9 +93,7 @@ export default function SignIn({ navigation }) {
       </Wrapper>
       <LoginButton
         onPress={() => {
-          setLoading(true);
           handleLogin();
-          setLoading(false);
         }}
       >
         {!loading ? (

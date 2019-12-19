@@ -38,6 +38,7 @@ export const DepartmentLogo = styled.TouchableOpacity`
 
 export const DepartmentImage = styled.Image.attrs({
   resizeMode: 'center',
+  aspectRatio: 3 / 4,
 })`
   flex: 1;
 `;

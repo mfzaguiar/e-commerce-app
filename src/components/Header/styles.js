@@ -4,13 +4,13 @@ export const Container = styled.View`
   flex-direction: row;
   background: tomato;
   align-items: center;
-  padding: 5px 15px;
+  padding: 8px 15px;
 `;
 
 export const Logo = styled.Image.attrs({
   resizeMode: 'center',
 })`
-  max-height: 50px;
-  max-width: 70px;
+  height: 40px;
+  width: 75px;
   margin-right: 10px;
 `;
