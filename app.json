@@ -7,6 +7,9 @@
     "sdkVersion": "35.0.0",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
+    "androidStatusBar": {
+      "backgroundColor": "#FF6347"
+    },
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "splash": {

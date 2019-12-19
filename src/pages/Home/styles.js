@@ -45,23 +45,12 @@ export const DepartmentImage = styled.Image.attrs({
 export const DepartmentText = styled(CustomText)`
   font-family: 'roboto-bold';
   font-size: 11px;
-  color: #737373;
+  color: ${colors.text};
 `;
 
 export const SalesContainer = styled.View`
   flex: 1;
   margin: 10px;
-`;
-
-export const SalesHeader = styled.View`
-  align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-`;
-
-export const SalesText = styled(CustomText)`
-  font-family: 'roboto-bold';
-  font-size: 16px;
-  color: #737373;
 `;
 
 export const SpinnerLoading = styled(ActivityIndicator).attrs({

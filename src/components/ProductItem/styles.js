@@ -5,7 +5,7 @@ import BuyButton from '~/components/BuyButton';
 
 import colors from '~/styles/colors';
 
-export const ProductItem = styled.TouchableOpacity`
+export const ProductItem = styled.View`
   height: 150px;
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
@@ -32,12 +32,12 @@ export const RightContent = styled.View`
   justify-content: space-between;
 `;
 
-export const Description = styled(CustomText).attrs({
+export const Title = styled(CustomText).attrs({
   numberOfLines: 2,
 })`
   font-family: 'roboto-bold';
   font-size: 14px;
-  color: #737373;
+  color: ${colors.text};
 `;
 
 export const Price = styled(CustomText)`
@@ -50,7 +50,7 @@ export const Price = styled(CustomText)`
 export const PriceInfo = styled(CustomText)`
   font-family: 'roboto-regular';
   font-size: 18px;
-  color: ${colors.darkgrey};
+  color: ${colors.text};
 `;
 
 export const PriceContainer = styled.View`
@@ -70,11 +70,15 @@ export const AddButton = styled(BuyButton)`
 `;
 
 export const FavoriteButton = styled(RectButton)`
+  height: 26px;
+  width: 26px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
   align-items: center;
   justify-content: center;
   align-self: flex-start;
-  top: 0;
+  top: -3px;
   left: 5px;
 `;
 

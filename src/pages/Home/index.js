@@ -9,8 +9,6 @@ import {
   DepartmentImage,
   DepartmentText,
   SalesContainer,
-  SalesHeader,
-  SalesText,
   SpinnerLoading,
   Wrapper,
   EmptyImage,

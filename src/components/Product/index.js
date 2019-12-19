@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import { formatPrice } from '~/util/format';
 import { FontAwesome } from '@expo/vector-icons/';
@@ -21,6 +21,7 @@ import {
   ProductFinish,
   Description,
   AddButton,
+  FavoriteButton,
 } from './styles';
 
 import Rating from '~/components/Rating';
@@ -57,17 +58,17 @@ export default function Product({ navigation }) {
     <Container>
       <Header>
         <TouchableOpacity onPress={() => navigation.navigate(params.keyScreen)}>
-          <FontAwesome name="arrow-left" color="#fff" size={18} />
+          <FontAwesome name="arrow-left" color="#a4a4a4" size={18} />
         </TouchableOpacity>
         <ProductHeader>
           <Rating
-            Textcolor="rgba(255,255,255,0.8)"
-            StarColor="rgba(255,255,255,0.8)"
+            Textcolor="#a4a4a4"
+            StarColor="#a4a4a4"
             size={18}
             defaultRating={product.rating}
             defaultNumRating={product.numrating}
           />
-          <RectButton onPress={() => handleFavorite(product)}>
+          <FavoriteButton onPress={() => handleFavorite(product)}>
             {!favorited ? (
               <FontAwesome
                 name="heart"
@@ -75,13 +76,9 @@ export default function Product({ navigation }) {
                 size={20}
               />
             ) : (
-              <FontAwesome
-                name="heart-o"
-                color="rgba(255,255,255,0.8)"
-                size={20}
-              />
+              <FontAwesome name="heart-o" color="#a4a4a4" size={20} />
             )}
-          </RectButton>
+          </FavoriteButton>
         </ProductHeader>
       </Header>
       <Carousel
@@ -101,6 +98,7 @@ export default function Product({ navigation }) {
             </PriceContainer>
           ) : (
             <PriceContainer>
+              <Price>apenas</Price>
               <PriceOriginal>{formatPrice(product.price)}</PriceOriginal>
             </PriceContainer>
           )}

@@ -1,46 +1,48 @@
 import styled from 'styled-components/native';
 import CustomText from '~/components/CustomText';
-import Button from '~/components/BuyButton';
+import BuyButton from '~/components/BuyButton';
 import colors from '~/styles/colors';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
 })`
   flex: 1;
-  background-color: ${colors.grey};
+  background-color: ${colors.background};
 `;
 
 export const Header = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: ${colors.darkgrey};
-  padding: 10px 15px;
+  background: ${colors.white};
+  padding: 10px 15px 0 15px;
 `;
 
 export const Name = styled(CustomText)`
   font-family: 'roboto-bold';
-  font-size: 16px;
-  color: ${colors.white};
+  font-size: 18px;
+  color: ${colors.text};
   letter-spacing: 1;
   padding: 10px 10px;
-  text-align: center;
+  text-align: justify;
 `;
 
 export const Description = styled(CustomText)`
   font-family: 'roboto-regular';
   line-height: 25;
-  font-size: 18px;
-  color: ${colors.white};
+  letter-spacing: 1.2;
+  font-size: 16px;
+  color: ${colors.text};
   padding: 10px;
   text-align: justify;
 `;
 
 export const PriceOriginal = styled(CustomText)`
-  font-family: 'roboto-regular';
+  font-family: 'roboto-bold';
   font-size: 22px;
   color: ${colors.white};
-  letter-spacing: 1;
+  letter-spacing: 2;
 `;
 
 export const PriceContainer = styled.View`
@@ -67,7 +69,7 @@ export const PriceDiscount = styled(CustomText)`
 `;
 
 export const ProductInfo = styled.View`
-  background: rgba(255, 255, 255, 0.1);
+  /* background: #eee; */
 `;
 
 export const ProductHeader = styled.View`
@@ -90,6 +92,16 @@ export const Actions = styled.View`
   margin-right: 10px;
 `;
 
-export const AddButton = styled(Button)`
+export const AddButton = styled(BuyButton)`
   flex: 1;
+  border-radius: 0;
+`;
+
+export const FavoriteButton = styled(RectButton)`
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  align-items: center;
+  justify-content: center;
 `;

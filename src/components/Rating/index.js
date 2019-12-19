@@ -24,11 +24,7 @@ export default function Rating({
             key={index}
             name={defaultValue <= index ? 'star-o' : 'star'}
             size={size}
-            color={
-              defaultValue <= index
-                ? StarColor || 'rgba(255,255,255,.3)'
-                : '#F2C94C'
-            }
+            color={defaultValue <= index ? '#F2C94C' : '#F2C94C'}
           />
         ))}
       </StarContainer>

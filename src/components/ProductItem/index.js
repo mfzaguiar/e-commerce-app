@@ -13,7 +13,7 @@ import {
   LeftContent,
   ProductImage,
   RightContent,
-  Description,
+  Title,
   PriceContainer,
   Price,
   PriceInfo,
@@ -73,7 +73,7 @@ export default function ProdItem({ navigation, item }) {
         {item.discount > 0 && <Discount>{item.discount}</Discount>}
       </LeftContent>
       <RightContent>
-        <Description
+        <Title
           onPress={() =>
             navigation.navigate('Product', {
               product: item,
@@ -82,7 +82,7 @@ export default function ProdItem({ navigation, item }) {
           }
         >
           {item.title}
-        </Description>
+        </Title>
 
         <PriceContainer>
           <Price>
