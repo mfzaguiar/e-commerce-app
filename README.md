@@ -6,7 +6,7 @@
 Tech Store E-commerce
 </h1>
 
-<p>
+<p align="center">
 Application created for the purpose of study, an ecommerce store
 </p>
 
@@ -58,7 +58,7 @@ Application created for the purpose of study, an ecommerce store
 
 Note: If you choose to start the mobile app in the android.
 
-Change the baseURL in file <strong>api.js</strong> located in services/api.js
+Change the <strong>baseURL</strong> in file <strong>api.js</strong> located in <strong>services/api.js</strong>
 
 - Genymotion emulator:
   `http://10.0.3.2:3000`
@@ -70,10 +70,18 @@ Change the baseURL in file <strong>api.js</strong> located in services/api.js
   If you having trouble with android device, I recommend you to use the
   [**Ngrock**](https://ngrok.com/)
 
+## Login in app
+
+1. Use the follow credentials to login<br/><br/>
+   email: admin@hotmail.com<br/>
+   password: 12345 <br/><br/>or<br/><br/>
+   email: teste@hotmail.com<br/>
+   password: 123
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
 
-# Author
+## Author
 
 - [**Matheus Aguiar**](https://www.linkedin.com/in/mfzaguiar/)
