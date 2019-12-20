@@ -73,7 +73,7 @@ export const FavoriteButton = styled(RectButton)`
   height: 26px;
   width: 26px;
   border-radius: 13px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -83,7 +83,7 @@ export const FavoriteButton = styled(RectButton)`
 `;
 
 export const RatingWrapper = styled.View`
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   align-items: center;
   top: -18;
 `;

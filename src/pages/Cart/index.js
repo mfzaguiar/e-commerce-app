@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { formatPrice } from '~/util/format';
 
 import {
@@ -17,7 +17,11 @@ import {
 import ProductCart from '~/components/ProductCart';
 import emptyCart from '~/assets/images/empty-cart.png';
 
+import * as CartActions from '~/store/modules/cart/actions';
+
 export default function Cart({ navigation }) {
+  const dispatch = useDispatch();
+
   const cart = useSelector(state =>
     state.cart.map(product => ({
       ...product,
@@ -32,6 +36,10 @@ export default function Cart({ navigation }) {
       }, 0)
     )
   );
+
+  function handleCheckout() {
+    dispatch(CartActions.checkoutRequest());
+  }
 
   return (
     <Container>
@@ -49,7 +57,7 @@ export default function Cart({ navigation }) {
               <TotalPrice> {total}</TotalPrice>
             </TotalText>
           </TotalWrapper>
-          <FinishButton>
+          <FinishButton onPress={() => handleCheckout()}>
             <ButtonText>Finalizar pedido</ButtonText>
           </FinishButton>
         </>

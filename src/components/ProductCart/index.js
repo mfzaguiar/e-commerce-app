@@ -55,7 +55,7 @@ export default function ProductCart({ item }) {
               <FontAwesome name="heart-o" color="#a4a4a4" size={20} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handleDeleteProduct(item.id)}>
-              <FontAwesome name="trash" color="#737373" size={20} />
+              <FontAwesome name="trash-o" color="#737373" size={20} />
             </TouchableOpacity>
           </WrapperActions>
         </LeftContent>

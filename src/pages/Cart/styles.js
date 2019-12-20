@@ -16,18 +16,21 @@ export const TotalWrapper = styled.View`
   justify-content: flex-end;
   line-height: 0;
   margin: 5px 0;
+  padding: 5px;
+  background: ${colors.white};
+  border-radius: 4px;
 `;
 
 export const TotalText = styled(CustomText)`
   font-family: 'roboto-bold';
   font-size: 16px;
-  color: ${colors.grey};
+  color: ${colors.primary};
 `;
 
 export const TotalPrice = styled(CustomText)`
   font-family: 'roboto-bold';
   font-size: 28px;
-  color: black;
+  color: ${colors.text};
 `;
 
 export const FinishButton = styled(RectButton)`
