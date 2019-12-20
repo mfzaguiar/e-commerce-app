@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import LottieView from 'lottie-react-native';
 import CustomText from '~/components/CustomText';
 import colors from '~/styles/colors';
 
@@ -68,4 +69,17 @@ export const ButtonText = styled(CustomText)`
   font-family: 'roboto-bold';
   font-size: 18px;
   color: ${colors.white};
+`;
+
+export const WrapperAnimation = styled.View`
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+`;
+
+export const CheckoutAnimation = styled(LottieView).attrs({
+  resizeMode: 'contain',
+})`
+  height: 150px;
+  width: 150px;
 `;

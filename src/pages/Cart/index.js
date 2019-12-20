@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { formatPrice } from '~/util/format';
@@ -13,14 +13,19 @@ import {
   BuyButton,
   ButtonText,
   EmptyCartImage,
+  WrapperAnimation,
+  CheckoutAnimation,
 } from './styles';
 import ProductCart from '~/components/ProductCart';
 import emptyCart from '~/assets/images/empty-cart.png';
+import checkout from '~/assets/animations/checkout.json';
 
 import * as CartActions from '~/store/modules/cart/actions';
 
 export default function Cart({ navigation }) {
   const dispatch = useDispatch();
+
+  const [isCheckout, setIsCheckout] = useState(false);
 
   const cart = useSelector(state =>
     state.cart.map(product => ({
@@ -39,10 +44,20 @@ export default function Cart({ navigation }) {
 
   function handleCheckout() {
     dispatch(CartActions.checkoutRequest());
+
+    setIsCheckout(true);
+    setTimeout(() => {
+      setIsCheckout(false);
+    }, 1500);
   }
 
   return (
     <Container>
+      {isCheckout && (
+        <WrapperAnimation>
+          <CheckoutAnimation autoPlay loop source={checkout} />
+        </WrapperAnimation>
+      )}
       {cart.length > 0 ? (
         <>
           <FlatList
@@ -62,12 +77,14 @@ export default function Cart({ navigation }) {
           </FinishButton>
         </>
       ) : (
-        <Wrapper>
-          <EmptyCartImage source={emptyCart} />
-          <BuyButton onPress={() => navigation.navigate('HomeRoute')}>
-            <ButtonText>Ir às compras</ButtonText>
-          </BuyButton>
-        </Wrapper>
+        !isCheckout && (
+          <Wrapper>
+            <EmptyCartImage source={emptyCart} />
+            <BuyButton onPress={() => navigation.navigate('HomeRoute')}>
+              <ButtonText>Ir às compras</ButtonText>
+            </BuyButton>
+          </Wrapper>
+        )
       )}
     </Container>
   );
