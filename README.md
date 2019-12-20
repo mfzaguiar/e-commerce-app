@@ -31,7 +31,8 @@ Application created for the purpose of study, an ecommerce store
 ## Features
 
 - ⚛️ **React Native** — A lib that provides a way to create native apps for Android and iOS
-- 💹 **Json Server with Relationships** — fake REST API with zero coding
+- `:arrow_up_small:` **Expo** - Framework and a platform for universal React applications.
+- 💹 **Json Server with Relationships** — Fake rest api with zero coding
 - ♻ **Redux with Redux Saga** — State management with middleware
 - 💅 **Styled Components** — styled-components
 - 🌸 **Reactotron** - Helps debugging process
@@ -40,6 +41,7 @@ Application created for the purpose of study, an ecommerce store
 ## TO-DO
 
 - [ ] Implement Animations
+- [ ] Proptypes
 
 ## Getting started
 
