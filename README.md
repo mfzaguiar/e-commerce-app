@@ -31,7 +31,7 @@ Application created for the purpose of study, an ecommerce store
 ## Features
 
 - ⚛️ **React Native** — A lib that provides a way to create native apps for Android and iOS
-- `:arrow_up_small:` **Expo** - Framework and a platform for universal React applications.
+- :arrow_up_small: **Expo** - Framework and a platform for universal React applications.
 - 💹 **Json Server with Relationships** — Fake rest api with zero coding
 - ♻ **Redux with Redux Saga** — State management with middleware
 - 💅 **Styled Components** — styled-components
