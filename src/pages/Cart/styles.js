@@ -58,6 +58,7 @@ export const BuyButton = styled(RectButton)`
   align-items: center;
   justify-content: center;
   width: 200px;
+  margin-top: 20px;
 `;
 
 export const ButtonText = styled(CustomText)`

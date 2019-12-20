@@ -15,7 +15,7 @@ import {
   EmptyCartImage,
 } from './styles';
 import ProductCart from '~/components/ProductCart';
-import emptyCart from '~/assets/images/empty-bag.png';
+import emptyCart from '~/assets/images/empty-cart.png';
 
 export default function Cart({ navigation }) {
   const cart = useSelector(state =>

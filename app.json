@@ -9,7 +9,8 @@
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "androidStatusBar": {
-      "backgroundColor": "#FF6347"
+      "backgroundColor": "#FF6347",
+      "barStyle": "light-content"
     },
     "icon": "./src/assets/splash.png",
     "android": {

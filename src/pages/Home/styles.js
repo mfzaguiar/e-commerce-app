@@ -51,7 +51,7 @@ export const DepartmentText = styled(CustomText)`
 
 export const SalesContainer = styled.View`
   flex: 1;
-  margin: 10px;
+  margin-bottom: 5px;
 `;
 
 export const SpinnerLoading = styled(ActivityIndicator).attrs({

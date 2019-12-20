@@ -1,6 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { Text } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
 import * as ProfileActions from '~/store/modules/profile/actions';

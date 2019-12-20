@@ -1,6 +1,6 @@
 import React from 'react';
+import { StatusBar, Text, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
-import { Text, FlatList } from 'react-native';
 
 import { Container, Wrapper, EmptyFavorite } from './styles';
 import emptyFavorite from '~/assets/images/empty-favorite.png';
@@ -13,6 +13,7 @@ export default function Favorite({ navigation }) {
 
   return (
     <Container>
+      <StatusBar backgroundColor="#ff6347" />
       {FavoriteData.length > 0 ? (
         <FlatList
           numColumns={1}

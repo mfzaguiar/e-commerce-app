@@ -8,12 +8,12 @@ import {
   ContainerGradient,
   WrapperCount,
   Title,
-  SpinnerLoading,
-  Animation,
+  WrapperAnimation,
+  LoadingAnimation,
 } from './styles';
 
 import ProductItem from '~/components/ProductItem';
-import christmas from '~/assets/animations/merrychristmas.json';
+import loadingAnimation from '~/assets/animations/loading.json';
 
 import api from '~/services/api';
 
@@ -34,28 +34,29 @@ export default function Deals({ navigation }) {
   return (
     <ContainerGradient>
       <WrapperCount>
-        <Animation autoPlay loop source={christmas} />
         <HeaderCountDown>
-          <Title>Oferta de Natal por tempo limitado</Title>
+          <Title>Oferta por tempo limitado</Title>
           <CountDown
             until={60 * 10 + 30}
-            digitStyle={{ backgroundColor: 'rgba(255,255,255,0.8)' }}
-            digitTxtStyle={{ color: '#333333' }}
+            digitStyle={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
+            digitTxtStyle={{ color: '#fff' }}
             timeLabelStyle={{
               color: '#fff',
-              fontSize: 10,
+              fontSize: 12,
               fontWeight: 'bold',
             }}
             separatorStyle={{ color: '#fff' }}
             timeToShow={['H', 'M', 'S']}
             showSeparator
-            size={20}
+            size={22}
           />
         </HeaderCountDown>
       </WrapperCount>
 
       {loading ? (
-        <SpinnerLoading />
+        <WrapperAnimation>
+          <LoadingAnimation autoPlay loop source={loadingAnimation} />
+        </WrapperAnimation>
       ) : (
         <Container>
           <FlatList
