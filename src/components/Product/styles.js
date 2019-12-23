@@ -3,6 +3,7 @@ import CustomText from '~/components/CustomText';
 import BuyButton from '~/components/BuyButton';
 import colors from '~/styles/colors';
 import { RectButton } from 'react-native-gesture-handler';
+import Rating from '~/components/Rating';
 
 export const Container = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
@@ -24,7 +25,7 @@ export const Name = styled(CustomText)`
   font-size: 18px;
   color: ${colors.text};
   letter-spacing: 1;
-  padding: 10px 10px;
+  padding: 10px;
   text-align: justify;
 `;
 
@@ -73,7 +74,6 @@ export const ProductInfo = styled.View`
 `;
 
 export const ProductHeader = styled.View`
-  width: 150px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -104,4 +104,8 @@ export const FavoriteButton = styled(RectButton)`
   background: rgba(255, 255, 255, 0.3);
   align-items: center;
   justify-content: center;
+`;
+
+export const CustomRating = styled(Rating)`
+  padding: 0px 0 5px 10px;
 `;

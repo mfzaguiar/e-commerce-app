@@ -40,7 +40,7 @@ Application created for the purpose of study, an ecommerce store
 
 ## TO-DO
 
-- [ ] Implement Animations
+- [ ] Animations
 - [ ] Proptypes
 
 ## Getting started

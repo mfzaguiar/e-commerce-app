@@ -22,9 +22,9 @@ import {
   Description,
   AddButton,
   FavoriteButton,
+  CustomRating,
 } from './styles';
 
-import Rating from '~/components/Rating';
 import Carousel from '~/components/Carousel';
 
 export default function Product({ navigation }) {
@@ -61,13 +61,6 @@ export default function Product({ navigation }) {
           <FontAwesome name="arrow-left" color="#a4a4a4" size={18} />
         </TouchableOpacity>
         <ProductHeader>
-          <Rating
-            Textcolor="#a4a4a4"
-            StarColor="#a4a4a4"
-            size={18}
-            defaultRating={product.rating}
-            defaultNumRating={product.numrating}
-          />
           <FavoriteButton onPress={() => handleFavorite(product)}>
             {!favorited ? (
               <FontAwesome
@@ -87,6 +80,14 @@ export default function Product({ navigation }) {
       />
       <ProductInfo>
         <Name>{product.title}</Name>
+        <CustomRating
+          Textcolor="#a4a4a4"
+          StarColor="#a4a4a4"
+          size={14}
+          fontSize={11}
+          defaultRating={product.rating}
+          defaultNumRating={product.numrating}
+        />
 
         <ProductFinish>
           {product.discount ? (

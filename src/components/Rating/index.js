@@ -9,12 +9,13 @@ export default function Rating({
   defaultNumRating = 0,
   Textcolor,
   StarColor,
+  ...rest
 }) {
   const defaultValue = defaultRating;
   const arrayStars = [1, 2, 3, 4, 5];
 
   return (
-    <Container>
+    <Container {...rest}>
       <Label color={Textcolor} fontSize={fontSize}>
         avaliações ({defaultNumRating})
       </Label>

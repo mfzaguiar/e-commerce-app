@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { Container, Button, Icon, Title } from './styles';
+import { Container, Icon, Wrapper, Title } from './styles';
 
 export default function ProfileButton({ name, children, margin = 0 }) {
   return (
     <Container margin={margin}>
-      <Button>
-        <Icon name={name} />
+      <Icon name={name} />
+      <Wrapper>
         <Title>{children}</Title>
-      </Button>
+      </Wrapper>
     </Container>
   );
 }

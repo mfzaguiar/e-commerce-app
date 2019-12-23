@@ -34,30 +34,28 @@ export default function SignIn({ navigation }) {
         q: `${email}`,
       },
     });
-
-    if (response.data.length > 0) {
-      if (String(response.data[0].password) === String(password)) {
-        const user = {
-          email: response.data[0].email,
-          name: response.data[0].name,
-        };
-        dispatch(ProfileActions.SignIn(user));
-        navigation.navigate('BottomRoutes');
-      } else {
-        setPassword('');
-        Toast.show('Email ou senha inválidos', {
-          duration: Toast.durations.SHORT,
-          position: 35,
-          backgroundColor: 'red',
-          shadow: true,
-          hideOnPress: true,
-        });
+    setLoading(false);
+    setTimeout(() => {
+      if (response.data.length > 0) {
+        if (String(response.data[0].password) === String(password)) {
+          const user = {
+            email: response.data[0].email,
+            name: response.data[0].name,
+          };
+          dispatch(ProfileActions.SignIn(user));
+          navigation.navigate('BottomRoutes');
+        } else {
+          setPassword('');
+          Toast.show('Email ou senha inválidos', {
+            duration: Toast.durations.SHORT,
+            position: 35,
+            backgroundColor: 'red',
+            shadow: true,
+            hideOnPress: true,
+          });
+        }
       }
-    }
-
-    return () => {
-      setLoading(false);
-    };
+    }, 50);
   }
 
   return (

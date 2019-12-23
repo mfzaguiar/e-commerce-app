@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { FlatList } from 'react-native';
 
 import {
@@ -28,24 +28,26 @@ import notfound from '~/assets/images/not-found.png';
 export default function Home({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
+  const [department, setDepartment] = useState('todos');
 
-  useEffect(() => {
-    async function loadProducts() {
-      setLoading(true);
-      const response = await api.get('products');
-      setProducts(response.data);
-      setLoading(false);
-    }
-    loadProducts();
+  const loadProducts = useCallback(async () => {
+    setLoading(true);
+    const response = await api.get('products');
+    setProducts(response.data);
+    setLoading(false);
   }, []);
 
-  async function handleLoadDepartment(type) {
+  useEffect(() => {
+    loadProducts();
+  }, [loadProducts]);
+
+  useMemo(async () => {
     setLoading(true);
     let response;
-    if (type !== 'todos') {
+    if (department !== 'todos') {
       response = await api.get('department', {
         params: {
-          q: type,
+          q: department,
           embed: 'products',
         },
       });
@@ -56,7 +58,7 @@ export default function Home({ navigation }) {
       setProducts(response.data);
     }
     setLoading(false);
-  }
+  }, [department]);
 
   async function handleSearchSubmit(search) {
     setLoading(true);
@@ -76,7 +78,7 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
-              handleLoadDepartment('todos');
+              setDepartment('todos');
             }}
           >
             <DepartmentImage source={all} />
@@ -86,7 +88,7 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
-              handleLoadDepartment('drone');
+              setDepartment('drone');
             }}
           >
             <DepartmentImage source={drone} />
@@ -96,7 +98,7 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
-              handleLoadDepartment('tv');
+              setDepartment('tv');
             }}
           >
             <DepartmentImage source={tv} />
@@ -106,7 +108,7 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
-              handleLoadDepartment('laptop');
+              setDepartment('laptop');
             }}
           >
             <DepartmentImage source={laptop} />
@@ -116,7 +118,7 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
-              handleLoadDepartment('videogames');
+              setDepartment('videogames');
             }}
           >
             <DepartmentImage source={videogames} />
@@ -126,7 +128,7 @@ export default function Home({ navigation }) {
         <DepartmentItem>
           <DepartmentLogo
             onPress={() => {
-              handleLoadDepartment('smartphone');
+              setDepartment('smartphone');
             }}
           >
             <DepartmentImage source={smartphone} />
