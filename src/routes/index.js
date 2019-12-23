@@ -93,7 +93,6 @@ const EntryPoint = createSwitchNavigator(
   }
 );
 
-// const Routes = createAppContainer(BottomRoutes);
-const Routes = createAppContainer(BottomRoutes);
+const Routes = createAppContainer(EntryPoint);
 
 export default Routes;

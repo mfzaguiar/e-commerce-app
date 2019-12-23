@@ -17,6 +17,7 @@ Application created for the purpose of study, an ecommerce store
 </p>
 
 <div align="center">
+<img src="https://media.giphy.com/media/S6I8rnmB9tl45s1gA2/giphy.gif" width="150" />
 <img src=".github/preview1.png" width="150" />
 <img src=".github/preview2.png" width="150" />
 <img src=".github/preview3.png" width="150" />
