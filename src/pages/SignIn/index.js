@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { ActivityIndicator } from 'react-native';
 import { useDispatch } from 'react-redux';
 import Toast from 'react-native-root-toast';
@@ -103,3 +104,9 @@ export default function SignIn({ navigation }) {
     </Container>
   );
 }
+
+SignIn.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

@@ -9,6 +9,7 @@
     "server": "json-server-relationship --watch db.json"
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.0.6",
     "axios": "^0.19.0",
     "expo": "^35.0.0",
     "expo-font": "~7.0.0",

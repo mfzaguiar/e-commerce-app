@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
@@ -69,4 +70,10 @@ Profile.navigationOptions = {
   tabBarLabel: <Text style={{ fontSize: 12 }}>Perfil</Text>,
   tabBarIcon: props => <TabIcon name="user" {...props} />,
   tabBarColor: `${colors.primary}`,
+};
+
+Profile.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };

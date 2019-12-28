@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StatusBar, Text, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 
@@ -36,4 +37,10 @@ Favorite.navigationOptions = {
   tabBarColor: colors.primary,
   tabBarLabel: <Text style={{ fontSize: 12 }}>Favoritos</Text>,
   tabBarIcon: props => <TabStateIcon name="heart" {...props} />,
+};
+
+Favorite.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };

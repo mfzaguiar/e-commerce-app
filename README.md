@@ -39,11 +39,6 @@ Application created for the purpose of study, an ecommerce store
 - 🌸 **Reactotron** - Helps debugging process
 - 💖 **Lint** — ESlint/Prettier/Editor Config
 
-## TO-DO
-
-- [ ] Animations
-- [ ] Proptypes
-
 ## Getting started
 
 1. Clone this repo using `git clone https://github.com/mfzaguiar/e-commerce-app.git`

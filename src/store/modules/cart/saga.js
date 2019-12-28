@@ -23,8 +23,17 @@ function* addToCart({ id }) {
       shadow: true,
       hideOnPress: true,
     });
+
     return;
   }
+
+  Toast.show('Produto adicionado ao carrinho', {
+    duration: Toast.durations.SHORT,
+    position: -75,
+    backgroundColor: 'green',
+    shadow: true,
+    hideOnPress: true,
+  });
 
   if (productExists) {
     yield put(updateAmountSuccess(id, amount));
@@ -47,8 +56,8 @@ function* addToCart({ id }) {
 function* updateAmount({ id, amount }) {
   if (amount <= 0) return;
 
-  const stock = yield call(api.get, `stock/${id}`);
-  const stockAmount = stock.data.amount;
+  const { data } = yield call(api.get, `stock/${id}`);
+  const stockAmount = data.amount;
 
   if (amount > stockAmount) {
     Toast.show('Quantidade indisponível no estoque', {

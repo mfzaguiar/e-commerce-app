@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Logo } from './styles';
 import InputSearch from '~/components/InputSearch';
@@ -23,3 +24,7 @@ export default function Header({ handleSearchSubmit }) {
     </Container>
   );
 }
+
+Header.propTypes = {
+  handleSearchSubmit: PropTypes.func.isRequired,
+};

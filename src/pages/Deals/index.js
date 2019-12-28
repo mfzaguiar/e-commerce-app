@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { FlatList } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 
@@ -72,3 +73,9 @@ export default function Deals({ navigation }) {
     </ContainerGradient>
   );
 }
+
+Deals.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

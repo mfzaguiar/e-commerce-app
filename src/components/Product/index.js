@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { FontAwesome } from '@expo/vector-icons/';
+import PropTypes from 'prop-types';
 
 import { formatPrice } from '~/util/format';
-import { FontAwesome } from '@expo/vector-icons/';
 
 import * as FavoriteActions from '~/store/modules/favorite/actions';
 import * as CartActions from '~/store/modules/cart/actions';
@@ -50,8 +51,8 @@ export default function Product({ navigation }) {
     dispatch(CartActions.addToCartRequest(id));
   }
 
-  function handleFavorite(product) {
-    dispatch(FavoriteActions.toggleFavorite(product));
+  function handleFavorite(prod) {
+    dispatch(FavoriteActions.toggleFavorite(prod));
   }
 
   return (
@@ -113,3 +114,11 @@ export default function Product({ navigation }) {
     </Container>
   );
 }
+
+Product.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+    getParam: PropTypes.func.isRequired,
+    state: PropTypes.object.isRequired,
+  }).isRequired,
+};

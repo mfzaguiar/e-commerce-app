@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons/';
 
@@ -27,3 +28,8 @@ export default function TabIcon({ name, tintColor }) {
     </Container>
   );
 }
+
+TabIcon.propTypes = {
+  name: PropTypes.string.isRequired,
+  tintColor: PropTypes.string.isRequired,
+};

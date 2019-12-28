@@ -1,9 +1,8 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef } from 'react';
+import { RectButton } from 'react-native-gesture-handler';
 import { FontAwesome } from '@expo/vector-icons/';
-// import PropTypes from 'prop-types';
 
 import { Container, TInput } from './styles';
-import { RectButton } from 'react-native-gesture-handler';
 
 function InputSearch(
   { handleClearValue, setSearch, search, icon, ...rest },
@@ -26,15 +25,5 @@ function InputSearch(
     </Container>
   );
 }
-
-// Input.propTypes = {
-//   icon: PropTypes.string,
-//   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-// };
-
-// Input.defaultProps = {
-//   icon: null,
-//   style: {},
-// };
 
 export default forwardRef(InputSearch);

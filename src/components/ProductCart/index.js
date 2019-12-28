@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { FontAwesome } from '@expo/vector-icons/';
@@ -82,3 +83,13 @@ export default function ProductCart({ item }) {
     </ProductItem>
   );
 }
+
+ProductCart.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    title: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    subtotal: PropTypes.string.isRequired,
+  }).isRequired,
+};

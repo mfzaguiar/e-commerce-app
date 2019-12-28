@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
+import PropTypes from 'prop-types';
 
 import { Dimensions } from 'react-native';
 
 import { Container, ContainerImage, ProductImage } from './styles';
-import { red } from 'ansi-colors';
 
 export default function MyCarousel({ data, dataSize }) {
   const [entries, setEntries] = useState(1);
@@ -14,9 +14,9 @@ export default function MyCarousel({ data, dataSize }) {
   useEffect(() => {
     setFdata(data);
     setEntries(dataSize);
-  }, [dataSize, setFdata]);
+  }, [dataSize, setFdata, data]);
 
-  const renderItem = ({ item, index }) => {
+  const renderItem = ({ item }) => {
     return (
       <ContainerImage>
         <ProductImage source={{ uri: item }} />
@@ -55,3 +55,13 @@ export default function MyCarousel({ data, dataSize }) {
     </Container>
   );
 }
+
+MyCarousel.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dataSize: PropTypes.number.isRequired,
+  item: PropTypes.string, //eslint-disable-line
+};
+
+MyCarousel.defaultProps = {
+  item: null,
+};

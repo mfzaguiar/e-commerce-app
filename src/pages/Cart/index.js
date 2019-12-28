@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FlatList } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { formatPrice } from '~/util/format';
@@ -89,3 +90,9 @@ export default function Cart({ navigation }) {
     </Container>
   );
 }
+
+Cart.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

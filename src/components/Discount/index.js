@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, DiscountText } from './styles';
 
@@ -9,3 +10,7 @@ export default function Discount({ children }) {
     </Container>
   );
 }
+
+Discount.propTypes = {
+  children: PropTypes.number.isRequired,
+};

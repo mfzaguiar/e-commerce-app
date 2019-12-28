@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, StarContainer, Label, StarIcon } from './styles';
 
@@ -7,8 +8,7 @@ export default function Rating({
   fontSize = 12,
   defaultRating = 0,
   defaultNumRating = 0,
-  Textcolor,
-  StarColor,
+  TextColor,
   ...rest
 }) {
   const defaultValue = defaultRating;
@@ -16,13 +16,13 @@ export default function Rating({
 
   return (
     <Container {...rest}>
-      <Label color={Textcolor} fontSize={fontSize}>
+      <Label color={TextColor} fontSize={fontSize}>
         avaliações ({defaultNumRating})
       </Label>
       <StarContainer>
         {arrayStars.map((item, index) => (
           <StarIcon
-            key={index}
+            key={String(index)}
             name={defaultValue <= index ? 'star-o' : 'star'}
             size={size}
             color={defaultValue <= index ? '#F2C94C' : '#F2C94C'}
@@ -32,3 +32,19 @@ export default function Rating({
     </Container>
   );
 }
+
+Rating.propTypes = {
+  size: PropTypes.number,
+  fontSize: PropTypes.number,
+  defaultRating: PropTypes.number,
+  defaultNumRating: PropTypes.number,
+  TextColor: PropTypes.string,
+};
+
+Rating.defaultProps = {
+  size: 20,
+  fontSize: 12,
+  defaultRating: 0,
+  defaultNumRating: 0,
+  TextColor: null,
+};

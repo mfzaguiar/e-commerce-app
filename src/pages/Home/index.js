@@ -1,4 +1,5 @@
 import React, { useMemo, useCallback, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { FlatList } from 'react-native';
 
 import {
@@ -163,3 +164,9 @@ export default function Home({ navigation }) {
     </Container>
   );
 }
+
+Home.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
